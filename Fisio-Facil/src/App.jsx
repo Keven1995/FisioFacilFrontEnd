@@ -1,12 +1,14 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import Footer from "./Footer/Footer";
+import Header from "./Header/Header";
 
 function App() {
   return (
     <div>
+      <Header />
       <h1>Fisio Facil</h1>
+      <Footer/>
     </div>
   );
 }
