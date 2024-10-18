@@ -51,14 +51,14 @@ const Login = () => {
             <input type="checkbox" />
             Lembrar de mim
           </label>
-          <a href="#">Esqueceu a senha?</a>
+          <a href="http://localhost:5173/EsqueciaSenha">Esqueceu a senha?</a>
         </div>
         <button type="submit" className="btn">
           Login
         </button>
         <div className="signup-link">
           <p>
-            Não tem uma conta? <a href="#">Registrar</a>
+            Não tem uma conta? <a href="http://localhost:5173/Cadastrar">Registrar</a>
           </p>
         </div>
       </form>

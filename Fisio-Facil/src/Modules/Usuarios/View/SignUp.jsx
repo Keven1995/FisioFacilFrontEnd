@@ -27,51 +27,56 @@ const SignUp = () => {
   };
 
   return (
-    <div className="container">
-      
-      <form onSubmit={handleSubmit}>
-      <h1>FisioFácil</h1>
-        <div className="input-field">
-          <input
-            type="email"
-            placeholder="E-mail"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <FaUser className="icon" />
-        </div>
-        <div className="input-field">
-          <input
-            type="text"
-            placeholder="Nome de usuário"
-            onChange={(e) => setUserName(e.target.value)}
-          />
-          <FaUser className="icon" />
-        </div>
-        <div className="input-field">
-          <input
-            type="password"
-            placeholder="Senha"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <FaLock className="icon" />
-        </div>
-        <div className="input-field">
-          <input
-            type="password"
-            placeholder="Confirmar Senha"
-            onChange={(e) => setconfirmPassword(e.target.value)}
-          />
-          <FaLock className="icon" />
-        </div>
-        <button type="submit" className="btn">
-          Cadastrar
-        </button>
-        <div className="signup-link">
-          <p>
-            Realizou o cadastro? <a href="#">Login</a>
-          </p>
-        </div>
-      </form>
+    <div className="page-wrapper">
+      <div className="info-text">
+        <p>Você está a um passo de transformar sua qualidade de vida.</p>
+      </div>
+      <div className="container">
+        <form onSubmit={handleSubmit}>
+          <h1>FisioFácil</h1>
+          <div className="input-field">
+            <input
+              type="email"
+              placeholder="E-mail"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <FaUser className="icon" />
+          </div>
+          <div className="input-field">
+            <input
+              type="text"
+              placeholder="Nome de usuário"
+              onChange={(e) => setUserName(e.target.value)}
+            />
+            <FaUser className="icon" />
+          </div>
+          <div className="input-field">
+            <input
+              type="password"
+              placeholder="Senha"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <FaLock className="icon" />
+          </div>
+          <div className="input-field">
+            <input
+              type="password"
+              placeholder="Confirmar Senha"
+              onChange={(e) => setconfirmPassword(e.target.value)}
+            />
+            <FaLock className="icon" />
+          </div>
+          <button type="submit" className="btn">
+            Cadastrar
+          </button>
+          <div className="signup-link">
+            <p>
+              Realizou o cadastro?{" "}
+              <a href="http://localhost:5173/login">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

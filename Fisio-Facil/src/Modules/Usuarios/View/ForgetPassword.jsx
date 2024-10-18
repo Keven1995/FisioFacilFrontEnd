@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import "./Login.css";
-const Login = () => {
+
+const ForgetPassword = () => {
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
@@ -24,25 +25,34 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
-      
-      <form onSubmit={handleSubmit}>
-      <h1>FisioFácil</h1>
-        <div className="input-field">
-          <input
-            type="email"
-            placeholder="Insira um email válido"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <FaUser className="icon" />
-        </div>
+    <div className="page-wrapper">
+      <div className="info-text">
+        <p>
+          INSIRA UM EMAIL VÁLIDO <br />
+          PARA QUE SEJA ENVIADO UM LINK <br />
+          PARA ALTERAÇÃO DE SENHA.
+        </p>
+      </div>
 
-        <button type="submit" className="btn">
-          Esqueci a senha
-        </button>
-      </form>
+      <div className="container">
+        <form onSubmit={handleSubmit}>
+          <h1>FisioFácil</h1>
+          <div className="input-field">
+            <input
+              type="email"
+              placeholder="Insira um email válido"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <FaUser className="icon" />
+          </div>
+
+          <button type="submit" className="btn">
+            Esqueci a senha
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
 
-export default Login;
+export default ForgetPassword;
