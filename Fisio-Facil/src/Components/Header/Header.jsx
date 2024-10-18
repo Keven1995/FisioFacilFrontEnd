@@ -4,8 +4,10 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo">
-          <h1>FisioFacil</h1>
+        <div className="logo" >
+          <a href="/">
+          <h1>FisioFácil</h1>
+          </a>
         </div>
         <nav className="header-nav">
           <ul className="nav-list">
