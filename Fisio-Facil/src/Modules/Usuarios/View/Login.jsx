@@ -53,7 +53,7 @@ const Login = () => {
           </label>
           <a href="http://localhost:5173/EsqueciaSenha">Esqueceu a senha?</a>
         </div>
-        <button type="submit" className="btn">
+        <button type="submit" className="btn" href="http://localhost:5173/CategoriaMembros">
           Login
         </button>
         <div className="signup-link">

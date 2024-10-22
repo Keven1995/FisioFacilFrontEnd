@@ -7,7 +7,6 @@
   padding: 30px 0; /* Ajuste no espaçamento vertical */
 }
 
-
 .header-container {
   display: flex;
   justify-content: space-between; /* Espaça logo e menu */
@@ -21,8 +20,8 @@
   color: #11c26c; /* Cor do texto do título */
   font-size: 32px; /* Tamanho do texto do título */
   margin: 0; /* Remove a margem do título */
-  
 }
+
 .logo a {
   outline: none;
   text-decoration: none;
@@ -37,7 +36,6 @@
   padding: 0; /* Remove o preenchimento padrão */
   margin: 0; /* Remove a margem padrão */
   display: flex; /* Para que os itens do menu fiquem lado a lado */
-  
 }
 
 .nav-item {
@@ -54,8 +52,6 @@
   text-decoration: underline; /* Sublinhado ao passar o mouse */
 }
 
-
-
 /* Estilo do texto fora do card */
 .info-text {
   text-align: center;
@@ -67,7 +63,7 @@
 /* Estilo do card que envolve o formulário */
 .container {
   width: 450px;
-  background-color: #ffff;
+  background-color: #ffffff; /* Ajuste da cor branca correta */
   border: 2px solid;
   padding: 40px;
   border-radius: 20px;
@@ -126,7 +122,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 14.5px;
-  margin: -15px 0 15px;
+  margin: 0 0 15px; /* Removido o espaçamento negativo */
 }
 
 .container .recall-forget a {
@@ -158,23 +154,22 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   background: #11c26c;
+  color: white; /* Texto branco por padrão */
   font-size: 16px;
   font-weight: 600;
   text-shadow: none;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Animação suave */
+}
+
+.btn:hover {
+  background-color: #0fa95b; /* Cor verde mais escura no hover */
+  color: white; /* Texto branco no hover */
 }
 
 .container .signup-link {
   font-size: 15px;
   text-align: center;
   margin: 25px 0 10px;
-}
-
-.container .signup-link p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #11c26c;
-  text-decoration: none;
 }
 
 .container .signup-link a {
