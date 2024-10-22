@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import TerapiaHome from '/src/assets/terapiaHome.jpg';
 import Choice from '/src/assets/choice.jpg';
 import "../../Styles/Sobre.css";
 

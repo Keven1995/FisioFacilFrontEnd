@@ -3,8 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import "../../Usuarios/View/Login.css";
 import colunaVertebralImg from "/src/assets/colunaVertebral.jpg";
-import Inferiores from "/src/assets/Inferiores.jpg";
-import Superiores from "/src/assets/Superiores.jpg";
+import Inferiores from "/src/assets/inferiores.jpg";
+import Superiores from "/src/assets/superiores.jpg";
 
 const Servicos = () => {
   const navigate = useNavigate();

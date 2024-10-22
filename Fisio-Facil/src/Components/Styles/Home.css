@@ -24,14 +24,7 @@ body {
     max-width: 1200px; /* Largura máxima */
     margin: 0 auto; /* Centraliza o contêiner */
   }
-  
-  
-  /* Estilos do Header e Footer (opcional, caso queira sobrescrever) */
-  header, footer {
-    background-color: #ffffff; /* Fundo branco para destacar */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  }
-  
+    
   /* Seções */
   section {
     margin: 30px 0; /* Espaçamento entre seções */

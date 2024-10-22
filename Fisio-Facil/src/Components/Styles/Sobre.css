@@ -4,17 +4,7 @@
 body {
     background-color: #f8f9fa; /* Cor de fundo suave */
   }
-  
-  /* Estilos para o header */
-  header {
-    padding: 20px; /* Adiciona espaçamento interno ao header */
-    border: 2px solid #28a745; /* Borda verde */
-    box-sizing: border-box; /* Garante que a borda seja respeitada */
-    position: relative; /* Para uso de z-index */
-    z-index: 1; /* Mantém o header acima do conteúdo */
-  }
-  
-  /* Estilos para o título principal */
+    /* Estilos para o título principal */
   h1 {
     color: #28a745; /* Verde da página */
   }
