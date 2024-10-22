@@ -1,0 +1,7 @@
+footer {
+    margin-top: 50px;
+    color: #6c757d; /* Cor de texto média para o footer */
+    padding: 20px 0; /* Espaçamento interno */
+    background-color: #ffffff; /* Fundo branco */
+    border-top: 2px solid #28a745; /* Borda verde no topo */
+  }
