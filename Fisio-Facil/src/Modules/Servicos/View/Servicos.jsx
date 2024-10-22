@@ -8,6 +8,7 @@ import Superiores from "/src/assets/Superiores.jpg";
 
 const Servicos = () => {
   const navigate = useNavigate();
+  
 
   const handleClick = (path) => {
     navigate(path);
