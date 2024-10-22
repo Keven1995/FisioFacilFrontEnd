@@ -46,8 +46,8 @@ const ForgetPassword = () => {
             <FaUser className="icon" />
           </div>
 
-          <button type="submit" className="btn">
-            Esqueci a senha
+          <button className="btn" type="submit" >
+            Enviar
           </button>
         </form>
       </div>
