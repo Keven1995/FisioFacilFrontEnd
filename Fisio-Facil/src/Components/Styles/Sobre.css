@@ -1,0 +1,75 @@
+/* Sobre.css */
+
+/* Configurações gerais */
+body {
+    background-color: #f8f9fa; /* Cor de fundo suave */
+  }
+  
+  /* Estilos para o header */
+  header {
+    padding: 20px; /* Adiciona espaçamento interno ao header */
+    border: 2px solid #28a745; /* Borda verde */
+    box-sizing: border-box; /* Garante que a borda seja respeitada */
+    position: relative; /* Para uso de z-index */
+    z-index: 1; /* Mantém o header acima do conteúdo */
+  }
+  
+  /* Estilos para o título principal */
+  h1 {
+    color: #28a745; /* Verde da página */
+  }
+  
+  /* Estilos para os subtítulos */
+  h2 {
+    color: #28a745; /* Verde da página para os subtítulos */
+  }
+  
+  /* Estilos para parágrafos */
+  p {
+    color: #495057; /* Cor de texto média */
+  }
+  
+  /* Botão personalizado */
+  .btn-success {
+    background-color: #28a745; /* Verde do Bootstrap */
+    border: none;
+    transition: background-color 0.3s; /* Efeito de transição ao passar o mouse */
+  }
+  
+  .btn-success:hover {
+    background-color: #218838; /* Tom mais escuro quando o mouse passa por cima */
+  }
+  
+  /* Estilo para as imagens */
+  .img-fluid {
+    border-radius: 10px; /* Bordas arredondadas nas imagens */
+  }
+  
+  /* Margens para seções */
+  .mb-4 {
+    margin-bottom: 1.5rem; /* Espaçamento abaixo das seções */
+  }
+  
+  .mt-5 {
+    margin-top: 3rem; /* Espaçamento acima das seções */
+  }
+  
+  /* Texto centralizado */
+  .text-center {
+    text-align: center; /* Centraliza o texto */
+  }
+  
+  /* Estilo para a chamada para ação */
+  .text-center h2 {
+    margin-top: 2rem; /* Margem acima do título */
+  }
+  
+  .text-center p {
+    margin-bottom: 2rem; /* Margem abaixo do parágrafo */
+  }
+  
+  /* Adicionando um pouco de espaçamento nas seções */
+  .container {
+    padding-top: 100px; /* Espaçamento no topo */
+  }
+  
