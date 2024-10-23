@@ -2,9 +2,9 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import "../../Usuarios/View/Login.css";
-import colunaVertebralImg from "/src/assets/colunaVertebral.jpg";
+import colunaVertebralImg from "../../../assets/img/colunaVertebral.jpg";
 import Inferiores from "../../../assets/img/inferiores.jpg";
-import Superiores from "/src/assets/superiores.jpg";
+import Superiores from "../../../assets/img/superiores.jpg";
 
 const Servicos = () => {
   const navigate = useNavigate();
