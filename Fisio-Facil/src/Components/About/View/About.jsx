@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import TerapiaHome from '../../../assets/img/terapiaHome.jpg';
-import Choice from '/src/assets/choice.jpg';
+import Choice from '../../../assets/img/choice.jpg';
 import "../../Styles/Sobre.css";
 
 const About = () => {
