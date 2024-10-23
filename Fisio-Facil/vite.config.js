@@ -9,5 +9,5 @@ export default defineConfig({
   server: {
     open: true
   },
-  base: './',  // Para garantir que os caminhos relativos funcionem corretamente
+  base: './', 
 });
