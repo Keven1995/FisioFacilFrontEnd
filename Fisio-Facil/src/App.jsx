@@ -22,15 +22,15 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Cadastrar" element={<SignUp />} />
-          <Route path="/EsqueciaSenha" element={<ForgetPassword />} />
-          <Route path="/Servicos" element={<Servicos />} />
-          <Route path="/CategoriaMembros" element={<CategoriaMembros />} />
-          <Route path="/MembrosInferiores" element={<MembrosInferiores />} />
-          <Route path="/MembrosSuperiores" element={<MembrosSuperiores />} />
-          <Route path="/ColunaVertebral" element={<ColunaVertebral />} />
-          <Route path="/Sobre" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cadastrar" element={<SignUp />} />
+          <Route path="/esqueciaSenha" element={<ForgetPassword />} />
+          <Route path="/servicos" element={<Servicos />} />
+          <Route path="/categoriaMembros" element={<CategoriaMembros />} />
+          <Route path="/membrosInferiores" element={<MembrosInferiores />} />
+          <Route path="/membrosSuperiores" element={<MembrosSuperiores />} />
+          <Route path="/colunaVertebral" element={<ColunaVertebral />} />
+          <Route path="/sobre" element={<About />} />
         </Routes>
       </Router>
 
