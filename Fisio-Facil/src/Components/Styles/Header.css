@@ -1,31 +1,45 @@
 .header {
-  background-color: #f8f9fa;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+  position: fixed; /* Fixa o header no topo */
+  top: 0; /* Alinha o header ao topo da página */
+  width: 100%; /* O header ocupa a largura total da página */
+  z-index: 1000; /* Coloca o header acima de outros elementos */
+  background-color: #ffffff; /* Mantém a cor de fundo */
+  padding: 30px 0; /* Ajuste no espaçamento vertical */
 }
 
 .header-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Espaça logo e menu */
+  align-items: center; /* Centraliza verticalmente */
+  max-width: 2005px; /* Largura máxima do header */
+  margin: 0 auto; /* Centraliza o header na página */
+  padding: 0 20px; /* Espaçamento lateral */
 }
 
 .logo h1 {
-  font-size: 1.8rem;
-  color: #333;
-  margin: 0;
-  font-weight: bold;
+  color: #11c26c; /* Cor do texto do título */
+  font-size: 32px; /* Tamanho do texto do título */
+  margin: 0; /* Remove a margem do título */
 }
 
-/* Estilos para navegação */
+.logo a {
+  outline: none;
+  text-decoration: none;
+}
+
+.header-nav {
+  display: flex; /* Estilo flex para o menu */
+}
+
 .header-nav .navbar-nav .nav-item .nav-link {
   color: #555;
   font-size: 1rem;
   font-weight: 500;
   padding: 0.5rem 1rem;
   transition: color 0.3s ease;
+  text-decoration: none; /* Remove o sublinhado */
+  font-size: 18px; /* Tamanho do texto do link */
+  
 }
 
 .header-nav .navbar-nav .nav-item .nav-link:hover {

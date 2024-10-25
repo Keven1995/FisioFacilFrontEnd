@@ -1,7 +1,11 @@
-/* Container */
+/* Estilo do card que envolve o formulário */
 .container {
   width: 100%;
-  padding-top: 120px; /* Aumentado para criar espaçamento entre o header */
+  background-color: #ffffff; /* Ajuste da cor branca correta */
+  border: 2px solid;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao card */
 }
 
 /* Seções */

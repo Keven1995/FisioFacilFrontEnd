@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-import "../../Usuarios/View/Login.css";
+import "../../Usuarios/View/Styles/Login.css";
 
 const ColunaVertebral = () => {
   const navigate = useNavigate();

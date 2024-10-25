@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaUser } from "react-icons/fa";
-import "./Login.css";
+import "../View/Styles/ForgetPassword.css";
 
 const ForgetPassword = () => {
   const [email, setEmail] = useState("");

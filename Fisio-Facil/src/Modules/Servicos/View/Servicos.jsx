@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-import "../../Usuarios/View/Login.css";
+import "../../Styles/Servicos.css";
 import colunaVertebralImg from "../../../assets/img/colunaVertebral.jpg";
 import Inferiores from "../../../assets/img/inferiores.jpg";
 import Superiores from "../../../assets/img/superiores.jpg";
