@@ -1,10 +1,10 @@
 .header {
-  background-color: #f8f9fa; /* Cor suave para o background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar um leve destaque */
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Garante que o header fique acima dos outros elementos */
+  z-index: 1000;
 }
 
 .header-container {
@@ -14,11 +14,12 @@
 
 .logo h1 {
   font-size: 1.8rem;
-  color: #333; /* Tom mais escuro para o título */
+  color: #333;
   margin: 0;
   font-weight: bold;
 }
 
+/* Estilos para navegação */
 .header-nav .navbar-nav .nav-item .nav-link {
   color: #555;
   font-size: 1rem;
@@ -28,19 +29,73 @@
 }
 
 .header-nav .navbar-nav .nav-item .nav-link:hover {
-  color: #28a745; /* Cor azul no hover para realçar */
+  color: #28a745;
 }
 
+/* Esconder o botão hamburger no desktop */
 .navbar-toggler {
   border: none;
+  display: none;
 }
 
+/* Ícone do botão hamburger */
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,..."); /* Ícone para o menu responsivo */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
+/* Menu colapsado (versão mobile) */
+.collapse {
+  display: none;
+}
+
+.collapse.show {
+  display: block; /* Exibe o menu quando o hamburger é clicado */
+}
+
+/* Estilos específicos para telas menores */
 @media (max-width: 768px) {
   .header-container {
     padding: 1rem;
+  }
+
+  /* Exibe o botão hamburger em telas pequenas */
+  .navbar-toggler {
+    display: block;
+  }
+
+  /* Menu de navegação no mobile */
+  .navbar-collapse {
+    display: none;
+    position: absolute;
+    top: 60px; /* Para posicionar o menu abaixo do header */
+    right: 10px;
+    background-color: #fff; /* Fundo branco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra no menu */
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 1001; /* Certifica que o menu está acima de outros elementos */
+  }
+
+  .navbar-collapse.show {
+    display: block;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    padding: 10px 20px;
+    font-size: 18px;
+    width: 100%;
+    text-align: left;
+    color: #555;
+  }
+
+  .navbar-nav .nav-item .nav-link:hover {
+    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse no link */
+    color: #28a745;
   }
 }
