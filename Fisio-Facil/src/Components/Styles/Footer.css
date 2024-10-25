@@ -1,7 +1,21 @@
-footer {
-    margin-top: 50px;
-    color: #6c757d; /* Cor de texto média para o footer */
-    padding: 20px 0; /* Espaçamento interno */
-    background-color: #ffffff; /* Fundo branco */
-    border-top: 2px solid #28a745; /* Borda verde no topo */
-  }
+.footer {
+  background-color: #343a40; /* Cor mais escura */
+  color: #f8f9fa;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #11c26c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #0dcaf0; /* Cor azul clara no hover */
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}

@@ -4,15 +4,10 @@ import '../Styles/Footer.css';
 
 const Footer = () => {
   return (
-    <div>
-      {/* Footer */}
-      <footer className="text-center mt-5">
-        <p style={{ fontSize: "14px" }}>
-          &copy; 2024 Fisio Fácil. Todos os direitos reservados.
-        </p>
-        <p style={{ fontSize: "14px" }}>Contato: suporte@fisiofacil.com</p>
-      </footer>
-    </div>
+    <footer className="footer">
+      <p>&copy; 2024 Fisio Fácil. Todos os direitos reservados.</p>
+      <p>Contato: <a href="mailto:suporte@fisiofacil.com">suporte@fisiofacil.com</a></p>
+    </footer>
   );
 };
 

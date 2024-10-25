@@ -1,7 +1,6 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import '../Styles/Header.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../Styles/Header.css";
 
 const Header = () => {
   return (
