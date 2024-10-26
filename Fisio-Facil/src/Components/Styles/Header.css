@@ -3,7 +3,7 @@
   top: 0; /* Alinha o header ao topo da página */
   width: 100%; /* O header ocupa a largura total da página */
   z-index: 1000; /* Coloca o header acima de outros elementos */
-  background-color: #ffffff; /* Mantém a cor de fundo */
+  background-color: #28a745; /* Mantém a cor de fundo */
   padding: 30px 0; /* Ajuste no espaçamento vertical */
 }
 
@@ -17,7 +17,7 @@
 }
 
 .logo h1 {
-  color: #11c26c; /* Cor do texto do título */
+  color: #ffffff; /* Cor do texto do título */
   font-size: 32px; /* Tamanho do texto do título */
   margin: 0; /* Remove a margem do título */
 }
@@ -32,7 +32,7 @@
 }
 
 .header-nav .navbar-nav .nav-item .nav-link {
-  color: #555;
+  color: #ffffff;
   font-size: 1rem;
   font-weight: 500;
   padding: 0.5rem 1rem;
@@ -40,10 +40,6 @@
   text-decoration: none; /* Remove o sublinhado */
   font-size: 18px; /* Tamanho do texto do link */
   
-}
-
-.header-nav .navbar-nav .nav-item .nav-link:hover {
-  color: #28a745;
 }
 
 /* Esconder o botão hamburger no desktop */
@@ -83,7 +79,7 @@
     position: absolute;
     top: 60px; /* Para posicionar o menu abaixo do header */
     right: 10px;
-    background-color: #fff; /* Fundo branco */
+    background-color: #28a745; /* Fundo branco */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra no menu */
     border-radius: 8px;
     padding: 10px 0;
@@ -109,7 +105,7 @@
   }
 
   .navbar-nav .nav-item .nav-link:hover {
-    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse no link */
-    color: #28a745;
+    background-color: #08501975; /* Cor de fundo ao passar o mouse no link */
+    color: #ffffff;
   }
 }
