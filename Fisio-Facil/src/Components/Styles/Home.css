@@ -3,10 +3,11 @@
   width: 100%;
   /*background-color: #ffffff;  Ajuste da cor branca correta */
   /*border: 2px solid;*/
-  padding: 40px;
+  padding: 145px;
+  margin: 0 auto;
   border-radius: 20px;
   /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  Adiciona sombra ao card */
-  margin-bottom: 100px;
+  max-width: 1200px;
 }
 
 /* Seções */

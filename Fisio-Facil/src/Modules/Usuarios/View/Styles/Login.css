@@ -18,10 +18,17 @@
   border-radius: 10px;
 }
 
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
 .login-container h1 {
-  text-align: center;
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: var(--color-primary);
   font-weight: bold;
 }
@@ -29,9 +36,8 @@
 .input-field {
   position: relative;
   width: 100%;
-  max-width: 400px;
   height: 50px;
-  margin: 15px 0;
+  margin-bottom: 20px;
 }
 
 .input-field input {
@@ -42,7 +48,7 @@
   border-radius: 40px;
   font-size: 16px;
   color: var(--color-primary);
-  padding: 20px 25px;
+  padding: 0 50px 0 20px;
   outline: none;
 }
 
@@ -53,7 +59,7 @@
 .input-field .icon {
   position: absolute;
   top: 50%;
-  right: 25px;
+  right: 20px;
   font-size: 18px;
   transform: translateY(-50%);
   color: var(--color-primary);
@@ -65,17 +71,8 @@
   align-items: center;
   font-size: 14.5px;
   width: 100%;
-  max-width: 400px;
-  margin: 10px 0;
-}
-
-.recall-forget a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-.recall-forget a:hover {
-  text-decoration: underline;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .recall-forget input {
@@ -87,18 +84,17 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 400px;
   height: 50px;
   border: none;
   cursor: pointer;
   border-radius: 40px;
   box-shadow: 0 0 10px var(--shadow);
-  padding: 10px;
   background: var(--color-primary);
   color: var(--color-text);
   font-size: 16px;
   font-weight: 600;
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 20px;
 }
 
 .btn:hover {
@@ -108,7 +104,7 @@
 .signup-link {
   font-size: 15px;
   text-align: center;
-  margin: 20px 0 10px;
+  margin-top: 20px;
 }
 
 .signup-link a {

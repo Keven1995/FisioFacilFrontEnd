@@ -4,16 +4,7 @@
   width: 100%; /* O header ocupa a largura total da página */
   z-index: 1000; /* Coloca o header acima de outros elementos */
   background-color: #28a745; /* Mantém a cor de fundo */
-  padding: 30px 0; /* Ajuste no espaçamento vertical */
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between; /* Espaça logo e menu */
-  align-items: center; /* Centraliza verticalmente */
-  max-width: 2005px; /* Largura máxima do header */
-  margin: 0 auto; /* Centraliza o header na página */
-  padding: 0 20px; /* Espaçamento lateral */
+  padding: 20px 0; /* Ajuste no espaçamento vertical */
 }
 
 .logo h1 {

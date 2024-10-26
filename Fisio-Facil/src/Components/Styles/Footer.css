@@ -1,21 +1,35 @@
 .footer {
-  background-color: #343a40; /* Cor mais escura */
+  background-color: #3a3f44; /* Cor um pouco mais clara para menor contraste */
   color: #f8f9fa;
   text-align: center;
-  padding: 1.5rem 0;
-  font-size: 0.9rem;
+  padding: 2rem 0; /* Mais espaçamento para o conteúdo */
+  font-size: 1rem; /* Aumentar o tamanho da fonte */
 }
 
 .footer a {
   color: #11c26c;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: bold; /* Destaque para o link */
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .footer a:hover {
   color: #0dcaf0; /* Cor azul clara no hover */
+  transform: scale(1.05); /* Leve aumento ao passar o mouse */
 }
 
 .footer p {
-  margin: 0.5rem 0;
+  margin: 1rem 0; /* Maior espaçamento entre parágrafos */
+  font-size: 0.9rem;
+  color: rgba(248, 249, 250, 0.8); /* Texto com menor opacidade para suavidade */
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+  .footer p, .footer a {
+    font-size: 0.9rem;
+  }
 }
