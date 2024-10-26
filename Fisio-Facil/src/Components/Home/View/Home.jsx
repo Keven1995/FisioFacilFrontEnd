@@ -28,12 +28,14 @@ const Home = () => {
       </section>
 
       <div className="text-center mt-5">
+      <section className="mb-5">
         <h2 className="section-title">
           Pronto para começar sua jornada de recuperação?
         </h2>
         <p className="section-text">
           Clique no botão abaixo e conheça nossos planos!
         </p>
+      </section>
 
         <div className="d-flex justify-content-center">
           <button
