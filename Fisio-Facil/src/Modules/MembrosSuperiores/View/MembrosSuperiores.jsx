@@ -40,7 +40,7 @@ const MembrosSuperiores = () => {
               textAlign: "center",
               fontWeight: "bold",
             }}
-            onClick={() => handleClick("/ombro")}
+            onClick={() => handleClick("/login")}
           >
             OMBRO
           </div>
@@ -55,7 +55,7 @@ const MembrosSuperiores = () => {
               textAlign: "center",
               fontWeight: "bold",
             }}
-            onClick={() => handleClick("/cotovelo")}
+            onClick={() => handleClick("/login")}
           >
             COTOVELO
           </div>
@@ -70,7 +70,7 @@ const MembrosSuperiores = () => {
               textAlign: "center",
               fontWeight: "bold",
             }}
-            onClick={() => handleClick("/punho")}
+            onClick={() => handleClick("/login")}
           >
             PUNHO
           </div>
@@ -85,7 +85,7 @@ const MembrosSuperiores = () => {
               textAlign: "center",
               fontWeight: "bold",
             }}
-            onClick={() => handleClick("/mao")}
+            onClick={() => handleClick("/login")}
           >
             MÃO
           </div>

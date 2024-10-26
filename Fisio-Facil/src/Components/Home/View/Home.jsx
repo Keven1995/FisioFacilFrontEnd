@@ -4,7 +4,7 @@ import "../../Styles/Home.css";
 
 const Home = () => {
   return (
-    <div className="container">
+    <div className="container-home">
       {/* Seção de Apresentação */}
       <section className="mb-5">
         <h2 className="text-center section-title">O que é o Fisio Fácil?</h2>

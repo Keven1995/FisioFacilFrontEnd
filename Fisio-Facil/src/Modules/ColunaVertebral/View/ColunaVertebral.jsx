@@ -40,7 +40,7 @@ const ColunaVertebral = () => {
               textAlign: "center",
               fontWeight: "bold",
             }}
-            onClick={() => handleClick("/ombro")}
+            onClick={() => handleClick("/login")}
           >
             CERVICAL
           </div>
@@ -55,7 +55,7 @@ const ColunaVertebral = () => {
               textAlign: "center",
               fontWeight: "bold",
             }}
-            onClick={() => handleClick("/cotovelo")}
+            onClick={() => handleClick("/login")}
           >
             TORÁCICA
           </div>
@@ -70,7 +70,7 @@ const ColunaVertebral = () => {
               textAlign: "center",
               fontWeight: "bold",
             }}
-            onClick={() => handleClick("/punho")}
+            onClick={() => handleClick("/login")}
           >
             LOMBAR
           </div>
@@ -85,7 +85,7 @@ const ColunaVertebral = () => {
               textAlign: "center",
               fontWeight: "bold",
             }}
-            onClick={() => handleClick("/mao")}
+            onClick={() => handleClick("/login")}
           >
             SACRAL
           </div>

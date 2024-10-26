@@ -34,7 +34,7 @@ const ForgetPassword = () => {
         </p>
       </div>
 
-      <div className="container">
+      <div className="forget-container">
         <form onSubmit={handleSubmit}>
           <h1>FisioFácil</h1>
           <div className="input-field">

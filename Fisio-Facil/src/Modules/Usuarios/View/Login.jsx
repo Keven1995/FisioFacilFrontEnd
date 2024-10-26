@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
 import "../View/Styles/Login.css";
+import "../../../App.css";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,10 +27,9 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
-      
+    <div className="login-container login-page">
       <form onSubmit={handleSubmit}>
-      <h1>FisioFácil</h1>
+        <h1>FisioFácil</h1>
         <div className="input-field">
           <input
             type="email"
@@ -47,18 +48,18 @@ const Login = () => {
         </div>
 
         <div className="recall-forget">
-          <label htmlFor="">
+          <label>
             <input type="checkbox" />
             Lembrar de mim
           </label>
-          <a href="http://localhost:5173/EsqueciaSenha">Esqueceu a senha?</a>
+          <a href="/esqueciaSenha">Esqueceu a senha?</a>
         </div>
-        <button type="submit" className="btn" href="http://localhost:5173/CategoriaMembros">
+        <button type="submit" className="btn">
           Login
         </button>
         <div className="signup-link">
           <p>
-            Não tem uma conta? <a href="http://localhost:5173/Cadastrar">Registrar</a>
+            Não tem uma conta? <a href="/cadastrar">Registrar</a>
           </p>
         </div>
       </form>

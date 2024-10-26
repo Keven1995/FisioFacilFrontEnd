@@ -40,7 +40,7 @@ const MembrosInferiores = () => {
               textAlign: "center",
               fontWeight: "bold",
             }}
-            onClick={() => handleClick("/joelho")}
+            onClick={() => handleClick("/login")}
           >
             QUADRL
           </div>
@@ -55,7 +55,7 @@ const MembrosInferiores = () => {
               textAlign: "center",
               fontWeight: "bold",
             }}
-            onClick={() => handleClick("/joelho")}
+            onClick={() => handleClick("/login")}
           >
             JOELHO
           </div>
@@ -70,7 +70,7 @@ const MembrosInferiores = () => {
               textAlign: "center",
               fontWeight: "bold",
             }}
-            onClick={() => handleClick("/tornozelo")}
+            onClick={() => handleClick("/login")}
           >
             TORNOZELO
           </div>
@@ -85,7 +85,7 @@ const MembrosInferiores = () => {
               textAlign: "center",
               fontWeight: "bold",
             }}
-            onClick={() => handleClick("/pe")}
+            onClick={() => handleClick("/login")}
           >
             PÉ
           </div>

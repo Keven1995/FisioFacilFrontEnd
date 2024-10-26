@@ -15,7 +15,7 @@ const Servicos = () => {
   };
 
   return (
-    <div className="container text-center mt-5">
+    <div className="container-servicos text-center mt-5">
       <h1 className="mb-5" style={{ fontFamily: "Arial", fontWeight: "bold" }}>
         FisioFacil
       </h1>

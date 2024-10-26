@@ -6,7 +6,7 @@ import "../../Styles/Sobre.css";
 
 const About = () => {
   return (
-    <div className="container">
+    <div className="container-sobre">
       <h1 className="text-center mb-4">Sobre o Fisio Fácil</h1>
       <p className="text-center mb-5" style={{ fontSize: "18px", lineHeight: "1.6" }}>
         O Fisio Fácil é uma plataforma inovadora desenvolvida para oferecer apoio completo aos pacientes de fisioterapia. Nosso principal objetivo é permitir que pessoas façam suas terapias no conforto de suas casas, com um suporte completo e orientado por profissionais especializados.

@@ -52,7 +52,7 @@ p {
 }
 
 /* Adicionando um pouco de espaçamento nas seções */
-.container {
+.container-sobre {
   padding-top: 100px; /* Espaçamento no topo */
   margin-bottom: 100px; /* Espaçamento no fundo */
   width: 100%;

@@ -1,11 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import ForgetPassword from "./Modules/Usuarios/View/ForgetPassword";
 import Login from "./Modules/Usuarios/View/Login";
 import SignUp from "./Modules/Usuarios/View/SignUp";
-
 import MembrosInferiores from "./Modules/MembrosInferiores/View/MembrosInferiores";
 import MembrosSuperiores from "./Modules/MembrosSuperiores/View/MembrosSuperiores";
 import ColunaVertebral from "./Modules/ColunaVertebral/View/ColunaVertebral";
@@ -15,29 +14,39 @@ import About from "./Components/About/View/About";
 import Home from "./Components/Home/View/Home";
 
 function App() {
+  const location = useLocation();
+  
+  // Verifica se a página atual é uma das páginas que não devem exibir o Header e Footer
+  const isLoginPage = ["/login", "/cadastrar", "/esqueciaSenha"].includes(location.pathname);
+
   return (
     <div className="App">
-      <Router>
-        <Header />
+      {/* Renderiza o Header se não estiver nas páginas especificadas */}
+      {!isLoginPage && <Header />} 
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/cadastrar" element={<SignUp />} />
-          <Route path="/esqueciaSenha" element={<ForgetPassword />} />
-          <Route path="/servicos" element={<Servicos />} />
-          <Route path="/categoriaMembros" element={<CategoriaMembros />} />
-          <Route path="/membrosInferiores" element={<MembrosInferiores />} />
-          <Route path="/membrosSuperiores" element={<MembrosSuperiores />} />
-          <Route path="/colunaVertebral" element={<ColunaVertebral />} />
-          <Route path="/sobre" element={<About />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/cadastrar" element={<SignUp />} />
+        <Route path="/esqueciaSenha" element={<ForgetPassword />} />
+        <Route path="/servicos" element={<Servicos />} />
+        <Route path="/categoriaMembros" element={<CategoriaMembros />} />
+        <Route path="/membrosInferiores" element={<MembrosInferiores />} />
+        <Route path="/membrosSuperiores" element={<MembrosSuperiores />} />
+        <Route path="/colunaVertebral" element={<ColunaVertebral />} />
+        <Route path="/sobre" element={<About />} />
+      </Routes>
 
-        <Footer/>
-      </Router>
-
+      {/* Renderiza o Footer se não estiver nas páginas especificadas */}
+      {!isLoginPage && <Footer />} 
     </div>
   );
 }
 
-export default App;
+export default function WrappedApp() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}

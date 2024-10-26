@@ -31,7 +31,7 @@ const SignUp = () => {
       <div className="info-text">
         <p>Você está a um passo de transformar sua qualidade de vida.</p>
       </div>
-      <div className="container">
+      <div className="cadastrar-container">
         <form onSubmit={handleSubmit}>
           <h1>FisioFácil</h1>
           <div className="input-field">
