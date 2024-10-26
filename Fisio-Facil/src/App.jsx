@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import ForgetPassword from "./Modules/Usuarios/View/ForgetPassword";
@@ -15,14 +20,14 @@ import Home from "./Components/Home/View/Home";
 
 function App() {
   const location = useLocation();
-  
-  // Verifica se a página atual é uma das páginas que não devem exibir o Header e Footer
-  const isLoginPage = ["/login", "/cadastrar", "/esqueciaSenha"].includes(location.pathname);
+
+  const isLoginPage = ["/login", "/cadastrar", "/esqueciaSenha"].includes(
+    location.pathname
+  );
 
   return (
     <div className="App">
-      {/* Renderiza o Header se não estiver nas páginas especificadas */}
-      {!isLoginPage && <Header />} 
+      {!isLoginPage && <Header />}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -37,8 +42,7 @@ function App() {
         <Route path="/sobre" element={<About />} />
       </Routes>
 
-      {/* Renderiza o Footer se não estiver nas páginas especificadas */}
-      {!isLoginPage && <Footer />} 
+      {!isLoginPage && <Footer />}
     </div>
   );
 }

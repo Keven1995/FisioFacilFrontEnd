@@ -1,11 +1,12 @@
 /* Estilo do card que envolve o formulário */
 .container-home {
   width: 100%;
-  background-color: #ffffff; /* Ajuste da cor branca correta */
-  border: 2px solid;
+  /*background-color: #ffffff;  Ajuste da cor branca correta */
+  /*border: 2px solid;*/
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao card */
+  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  Adiciona sombra ao card */
+  margin-bottom: 100px;
 }
 
 /* Seções */

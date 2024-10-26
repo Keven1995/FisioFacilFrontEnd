@@ -9,8 +9,10 @@ const Home = () => {
       <section className="mb-5">
         <h2 className="text-center section-title">O que é o Fisio Fácil?</h2>
         <p className="section-text">
-          O Fisio Fácil é uma plataforma de fisioterapia que permite que você faça suas terapias no conforto de sua casa.
-          Com planos personalizados e acompanhamento profissional, você pode cuidar da sua saúde com segurança e praticidade.
+          O Fisio Fácil é uma plataforma de fisioterapia que permite que você
+          faça suas terapias no conforto de sua casa. Com planos personalizados
+          e acompanhamento profissional, você pode cuidar da sua saúde com
+          segurança e praticidade.
         </p>
       </section>
 
@@ -25,18 +27,22 @@ const Home = () => {
         </ul>
       </section>
 
-      {/* Chamada para Ação */}
       <div className="text-center mt-5">
-        <h2 className="section-title">Pronto para começar sua jornada de recuperação?</h2>
+        <h2 className="section-title">
+          Pronto para começar sua jornada de recuperação?
+        </h2>
         <p className="section-text">
           Clique no botão abaixo e conheça nossos planos!
         </p>
-        <button
-          className="btn btn-success mt-3 action-btn"
-          onClick={() => (window.location.href = "/planos")}
-        >
-          Conheça nossos Planos
-        </button>
+
+        <div className="d-flex justify-content-center">
+          <button
+            className="btn btn-success mt-3 action-btn"
+            onClick={() => (window.location.href = "/planos")}
+          >
+            Conheça nossos Planos
+          </button>
+        </div>
       </div>
     </div>
   );

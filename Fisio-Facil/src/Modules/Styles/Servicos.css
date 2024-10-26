@@ -1,9 +1,29 @@
 /* Estilo do card que envolve o formulário */
 .container-servicos {
-    width: 100%;
-    background-color: #ffffff; /* Ajuste da cor branca correta */
-    border: 2px solid;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao card */
+  width: 100%;
+  /*background-color: #ffffff;  Ajuste da cor branca correta */
+  /*border: 2px solid;*/
+  padding: 40px;
+  border-radius: 20px;
+  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  Adiciona sombra ao card */
+  margin-bottom: 100px;
   }
+
+
+@media (max-width: 768px) {
+  section {
+    margin: 20px 10px; /* Reduz margens laterais */
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .section-text {
+    font-size: 16px;
+  }
+
+  .btn-success {
+    padding: 8px 20px;
+  }
+}
