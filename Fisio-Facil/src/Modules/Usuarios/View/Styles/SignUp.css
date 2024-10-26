@@ -16,7 +16,6 @@
   padding: 20px;
   background-color: var(--color-background);
   border-radius: 10px;
-  box-shadow: 0 4px 20px var(--shadow);
 }
 
 .cadastrar-container h1 {

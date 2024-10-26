@@ -26,14 +26,6 @@ const ForgetPassword = () => {
 
   return (
     <div className="page-wrapper">
-      <div className="info-text">
-        <p>
-          INSIRA UM EMAIL VÁLIDO <br />
-          PARA QUE SEJA ENVIADO UM LINK <br />
-          PARA ALTERAÇÃO DE SENHA.
-        </p>
-      </div>
-
       <div className="forget-container">
         <form onSubmit={handleSubmit}>
           <h1>FisioFácil</h1>
@@ -46,7 +38,7 @@ const ForgetPassword = () => {
             <FaUser className="icon" />
           </div>
 
-          <button className="btn" type="submit" >
+          <button className="btn" type="submit">
             Enviar
           </button>
         </form>
