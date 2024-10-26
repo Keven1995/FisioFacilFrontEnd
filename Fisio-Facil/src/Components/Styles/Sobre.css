@@ -1,62 +1,140 @@
 /* Adicionando um pouco de espaçamento nas seções */
 .container-sobre {
   width: 100%;
-  background-color: #ffffff; 
-  padding: 145px;
+  background-color: #ffffff;
+  padding: 160px 20px; /* Ajuste de padding para telas menores */
   border-radius: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Estilos para os títulos */
 h1 {
   color: #28a745; /* Verde da página */
+  font-size: 32px;
 }
 
-/* Estilos para os subtítulos */
 h2 {
-  color: #28a745; /* Verde da página para os subtítulos */
+  color: #28a745; /* Verde para os subtítulos */
+  font-size: 24px;
+  margin: 20px 0;
 }
 
 /* Estilos para parágrafos */
 p {
   color: #495057; /* Cor de texto média */
+  font-size: 18px;
+  line-height: 1.8;
 }
 
 /* Botão personalizado */
 .btn-success {
-  background-color: #28a745; /* Verde do Bootstrap */
+  background-color: #28a745;
   border: none;
-  transition: background-color 0.3s; /* Efeito de transição ao passar o mouse */
+  padding: 10px 30px;
+  border-radius: 30px;
+  transition: background-color 0.3s;
+  font-size: 16px;
 }
 
 .btn-success:hover {
-  background-color: #218838; /* Tom mais escuro quando o mouse passa por cima */
+  background-color: #218838; /* Tom mais escuro ao passar o mouse */
 }
 
 /* Estilo para as imagens */
 .img-fluid {
-  border-radius: 10px; /* Bordas arredondadas nas imagens */
+  border-radius: 10px;
+  max-width: 100%; /* Garante que a imagem seja responsiva */
+  height: auto;
 }
 
 /* Margens para seções */
 .mb-4 {
-  margin-bottom: 1.5rem; /* Espaçamento abaixo das seções */
+  margin-bottom: 1.5rem;
 }
 
 .mt-5 {
-  margin-top: 3rem; /* Espaçamento acima das seções */
+  margin-top: 3rem;
 }
 
 /* Texto centralizado */
 .text-center {
-  text-align: center; /* Centraliza o texto */
+  text-align: center;
 }
 
 /* Estilo para a chamada para ação */
 .text-center h2 {
-  margin-top: 2rem; /* Margem acima do título */
+  margin-top: 2rem;
+  font-size: 24px;
 }
 
 .text-center p {
-  margin-bottom: 2rem; /* Margem abaixo do parágrafo */
+  margin-bottom: 2rem;
 }
 
+/* Responsividade para telas médias e pequenas */
+@media (max-width: 1024px) {
+  .container-sobre {
+    padding: 60px 15px;
+  }
 
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .btn-success {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-sobre {
+    padding: 40px 10px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-sobre {
+    padding: 127px 5px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .btn-success {
+    width: 100%; /* Botão em largura total */
+    padding: 10px;
+  }
+}

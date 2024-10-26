@@ -1,22 +1,30 @@
+/* Container principal dos serviços */
 .container-servicos {
   width: 100%;
-  padding: 145px;
-  margin: 65px auto;
+  padding: 160px 20px;
+  margin: 40px auto;
   max-width: 1200px;
 }
 
+/* Título dos serviços */
 .servicos-title {
   font-family: 'Ubuntu', sans-serif;
   font-size: 2.5rem;
   color: #333;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
+/* Cartão de serviço */
 .service-card {
   background-color: #a0e57b;
   border-radius: 20px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .service-card:hover {
@@ -24,6 +32,7 @@
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Imagem do serviço */
 .service-card-img {
   border-radius: 15px;
   height: 200px;
@@ -31,23 +40,80 @@
   object-fit: cover;
 }
 
+/* Título do serviço */
 .service-card-title {
   font-size: 1.2rem;
   font-weight: bold;
   color: #333;
   margin-top: 10px;
+  text-align: center;
 }
 
+/* Responsividade para telas médias */
+@media (max-width: 1024px) {
+  .container-servicos {
+    padding: 60px 15px;
+  }
+
+  .servicos-title {
+    font-size: 2.2rem;
+  }
+
+  .service-card {
+    padding: 15px;
+  }
+
+  .service-card-img {
+    height: 180px;
+  }
+
+  .service-card-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsividade para telas pequenas */
 @media (max-width: 768px) {
   .container-servicos {
-    padding: 20px;
+    padding: 40px 10px;
   }
 
   .servicos-title {
     font-size: 2rem;
   }
 
+  .service-card {
+    padding: 10px;
+  }
+
+  .service-card-img {
+    height: 160px;
+  }
+
   .service-card-title {
     font-size: 1rem;
+  }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+  .container-servicos {
+    padding: 127px 5px;
+  }
+
+  .servicos-title {
+    font-size: 1.8rem;
+  }
+
+  .service-card {
+    padding: 8px;
+  }
+
+  .service-card-img {
+    height: 140px;
+  }
+
+  .service-card-title {
+    font-size: 0.9rem;
   }
 }
