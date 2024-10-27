@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-import "../../Usuarios/View/Styles/Login.css";
+import "../../Styles/Inferiores.css";
 
 const MembrosInferiores = () => {
   const navigate = useNavigate();
@@ -11,84 +11,22 @@ const MembrosInferiores = () => {
   };
 
   return (
-    <div>
-        <div
-          className="text-center"
-          style={{
-            backgroundColor: "#d4f1a1",
-            color: "#000000",
-            borderRadius: "20px",
-            cursor: "pointer",
-            padding: "10px",
-            fontWeight: "bold",
-          }}
-        >
-          MEMBROS INFERIORES
-        </div>
-      <div className="container text-center mt-5">
+    <div className="membros-inferiores-container">
+      <div className="membros-title">MEMBROS INFERIORES</div>
+      <div className="membros-buttons-container">
 
         {/* Lista dos membros */}
-        <div className="d-flex flex-column align-items-center">
-          <div
-            className="card mb-3"
-            style={{
-              width: "250px",
-              backgroundColor: "#d4f1a1",
-              borderRadius: "20px",
-              cursor: "pointer",
-              padding: "15px",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-            onClick={() => handleClick("/login")}
-          >
-            QUADRL
-          </div>
-          <div
-            className="card mb-3"
-            style={{
-              width: "250px",
-              backgroundColor: "#d4f1a1",
-              borderRadius: "20px",
-              cursor: "pointer",
-              padding: "15px",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-            onClick={() => handleClick("/login")}
-          >
-            JOELHO
-          </div>
-          <div
-            className="card mb-3"
-            style={{
-              width: "250px",
-              backgroundColor: "#d4f1a1",
-              borderRadius: "20px",
-              cursor: "pointer",
-              padding: "15px",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-            onClick={() => handleClick("/login")}
-          >
-            TORNOZELO
-          </div>
-          <div
-            className="card mb-3"
-            style={{
-              width: "250px",
-              backgroundColor: "#d4f1a1",
-              borderRadius: "20px",
-              cursor: "pointer",
-              padding: "15px",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-            onClick={() => handleClick("/login")}
-          >
-            PÉ
-          </div>
+        <div className="membros-button" onClick={() => handleClick("/login")}>
+          QUADRIL
+        </div>
+        <div className="membros-button" onClick={() => handleClick("/login")}>
+          JOELHO
+        </div>
+        <div className="membros-button" onClick={() => handleClick("/login")}>
+          TORNOZELO
+        </div>
+        <div className="membros-button" onClick={() => handleClick("/login")}>
+          PÉ
         </div>
       </div>
     </div>

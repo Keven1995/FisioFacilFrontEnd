@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-import "../../Usuarios/View/Styles/Login.css";
+import "../../Styles/Superiores.css";
 
 const MembrosSuperiores = () => {
   const navigate = useNavigate();
@@ -11,84 +11,20 @@ const MembrosSuperiores = () => {
   };
 
   return (
-    <div>
-        <div
-          className="text-center"
-          style={{
-            backgroundColor: "#d4f1a1",
-            color: "#000000",
-            borderRadius: "20px",
-            cursor: "pointer",
-            padding: "10px",
-            fontWeight: "bold",
-          }}
-        >
-          MEMBROS SUPERIORES
+    <div className="membros-superiores-container">
+      <div className="membros-title">MEMBROS SUPERIORES</div>
+      <div className="membros-buttons-container">
+        <div className="membros-button" onClick={() => handleClick("/login")}>
+          OMBRO
         </div>
-      <div className="container text-center mt-5">
-
-        {/* Lista dos membros */}
-        <div className="d-flex flex-column align-items-center">
-          <div
-            className="card mb-3"
-            style={{
-              width: "250px",
-              backgroundColor: "#d4f1a1",
-              borderRadius: "20px",
-              cursor: "pointer",
-              padding: "15px",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-            onClick={() => handleClick("/login")}
-          >
-            OMBRO
-          </div>
-          <div
-            className="card mb-3"
-            style={{
-              width: "250px",
-              backgroundColor: "#d4f1a1",
-              borderRadius: "20px",
-              cursor: "pointer",
-              padding: "15px",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-            onClick={() => handleClick("/login")}
-          >
-            COTOVELO
-          </div>
-          <div
-            className="card mb-3"
-            style={{
-              width: "250px",
-              backgroundColor: "#d4f1a1",
-              borderRadius: "20px",
-              cursor: "pointer",
-              padding: "15px",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-            onClick={() => handleClick("/login")}
-          >
-            PUNHO
-          </div>
-          <div
-            className="card mb-3"
-            style={{
-              width: "250px",
-              backgroundColor: "#d4f1a1",
-              borderRadius: "20px",
-              cursor: "pointer",
-              padding: "15px",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-            onClick={() => handleClick("/login")}
-          >
-            MÃO
-          </div>
+        <div className="membros-button" onClick={() => handleClick("/login")}>
+          COTOVELO
+        </div>
+        <div className="membros-button" onClick={() => handleClick("/login")}>
+          PUNHO
+        </div>
+        <div className="membros-button" onClick={() => handleClick("/login")}>
+          MÃO
         </div>
       </div>
     </div>

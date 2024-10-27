@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-import "../../Usuarios/View/Styles/Login.css";
+import "../../Styles/Coluna.css";
 
 const ColunaVertebral = () => {
   const navigate = useNavigate();
@@ -11,85 +11,18 @@ const ColunaVertebral = () => {
   };
 
   return (
-    <div>
-        <div
-          className="text-center"
-          style={{
-            backgroundColor: "#d4f1a1",
-            color: "#000000",
-            borderRadius: "20px",
-            cursor: "pointer",
-            padding: "10px",
-            fontWeight: "bold",
-          }}
-        >
-          COLUNA VERTEBRAL
-        </div>
-      <div className="container text-center mt-5">
-
-        {/* Lista dos membros */}
-        <div className="d-flex flex-column align-items-center">
+    <div className="coluna-vertebral-container">
+      <div className="coluna-title">COLUNA VERTEBRAL</div>
+      <div className="coluna-buttons-container">
+        {["CERVICAL", "TORÁCICA", "LOMBAR", "SACRAL"].map((section) => (
           <div
-            className="card mb-3"
-            style={{
-              width: "250px",
-              backgroundColor: "#d4f1a1",
-              borderRadius: "20px",
-              cursor: "pointer",
-              padding: "15px",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
+            key={section}
+            className="coluna-button"
             onClick={() => handleClick("/login")}
           >
-            CERVICAL
+            {section}
           </div>
-          <div
-            className="card mb-3"
-            style={{
-              width: "250px",
-              backgroundColor: "#d4f1a1",
-              borderRadius: "20px",
-              cursor: "pointer",
-              padding: "15px",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-            onClick={() => handleClick("/login")}
-          >
-            TORÁCICA
-          </div>
-          <div
-            className="card mb-3"
-            style={{
-              width: "250px",
-              backgroundColor: "#d4f1a1",
-              borderRadius: "20px",
-              cursor: "pointer",
-              padding: "15px",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-            onClick={() => handleClick("/login")}
-          >
-            LOMBAR
-          </div>
-          <div
-            className="card mb-3"
-            style={{
-              width: "250px",
-              backgroundColor: "#d4f1a1",
-              borderRadius: "20px",
-              cursor: "pointer",
-              padding: "15px",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-            onClick={() => handleClick("/login")}
-          >
-            SACRAL
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
