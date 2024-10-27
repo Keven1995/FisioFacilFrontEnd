@@ -17,6 +17,7 @@ import CategoriaMembros from "./Modules/CategoriaMembros/View/CategoriaMembros";
 import Servicos from "./Modules/Servicos/View/Servicos";
 import About from "./Components/About/View/About";
 import Home from "./Components/Home/View/Home";
+import Contact from './Modules/Contato/View/Contact';
 
 function App() {
   const location = useLocation();
@@ -39,6 +40,7 @@ function App() {
         <Route path="/membrosInferiores" element={<MembrosInferiores />} />
         <Route path="/membrosSuperiores" element={<MembrosSuperiores />} />
         <Route path="/colunaVertebral" element={<ColunaVertebral />} />
+        <Route path="/contato" element={<Contact />} />
         <Route path="/sobre" element={<About />} />
       </Routes>
 
