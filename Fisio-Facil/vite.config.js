@@ -7,7 +7,14 @@ export default defineConfig({
     outDir: 'dist'
   },
   server: {
-    open: true
+    open: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080', // Alvo do seu backend
+        changeOrigin: true, // Altera a origem da solicitação para o alvo
+        rewrite: (path) => path.replace(/^\/api/, ''), // Remove "/api" do início do caminho
+      },
+    },
   },
   base: './', 
 });
