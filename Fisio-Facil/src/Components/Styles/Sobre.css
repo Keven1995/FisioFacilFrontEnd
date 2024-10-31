@@ -75,7 +75,7 @@ p {
 /* Responsividade para telas médias e pequenas */
 @media (max-width: 1024px) {
   .container-sobre {
-    padding: 60px 15px;
+    padding: 180px 45px;
   }
 
   h1 {
@@ -98,7 +98,7 @@ p {
 
 @media (max-width: 768px) {
   .container-sobre {
-    padding: 40px 10px;
+    padding: 180px 45px;
   }
 
   h1 {
@@ -117,7 +117,7 @@ p {
 
 @media (max-width: 480px) {
   .container-sobre {
-    padding: 127px 5px;
+    padding: 180px 45px;
   }
 
   h1 {
