@@ -61,7 +61,7 @@
 .input-field .icon {
   position: absolute;
   top: 50%;
-  right: 25px;
+  right: 20px;
   font-size: 18px;
   transform: translateY(-50%);
 }
