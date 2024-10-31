@@ -67,7 +67,7 @@ const SignUp = () => {
             Cadastrar
           </button>
           <div className="signup-link">
-            <p>
+            <p className="p">
               Realizou o cadastro?{" "}
               <a href="http://localhost:5173/login">Login</a>
             </p>

@@ -1,11 +1,3 @@
-/* Definindo variáveis para cores */
-:root {
-  --color-background: #ffffff;
-  --color-primary: #11c26c;
-  --color-primary-dark: #0fa95b;
-  --color-text: white;
-  --shadow: rgba(0, 0, 0, 0.1);
-}
 
 .login-container {
   display: flex;
@@ -115,4 +107,12 @@
 
 .signup-link a:hover {
   text-decoration: underline;
+}
+
+.label{
+  color: var(--color-primary);
+}
+
+.p{
+  color: var(--color-primary);
 }

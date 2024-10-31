@@ -1,9 +1,9 @@
 /* Definindo variáveis para cores */
 :root {
-  --color-background: #ffffff;
-  --color-primary: #11c26c;
+  --color-background: #11c26c;
+  --color-primary: #ffffff;
   --color-primary-dark: #0fa95b;
-  --color-text: white;
+  --color-text: #11c26c;
   --shadow: rgba(0, 0, 0, 0.1);
 }
 

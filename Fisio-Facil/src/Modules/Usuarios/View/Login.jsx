@@ -48,7 +48,7 @@ const Login = () => {
         </div>
 
         <div className="recall-forget">
-          <label>
+          <label className="label">
             <input type="checkbox" />
             Lembrar de mim
           </label>
@@ -58,7 +58,7 @@ const Login = () => {
           Login
         </button>
         <div className="signup-link">
-          <p>
+          <p className="p">
             Não tem uma conta? <a href="/cadastrar">Registrar</a>
           </p>
         </div>
