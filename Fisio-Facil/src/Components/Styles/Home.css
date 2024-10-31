@@ -52,7 +52,7 @@ section {
 /* Responsividade para telas médias e pequenas */
 @media (max-width: 1024px) {
   .container-home {
-    padding: 40px 15px;
+    padding: 130px 15px;
   }
   
   .section-title {
@@ -66,7 +66,7 @@ section {
 
 @media (max-width: 768px) {
   .container-home {
-    padding: 30px 10px;
+    padding: 130px 10px;
   }
   
   section {
@@ -89,7 +89,7 @@ section {
 
 @media (max-width: 480px) {
   .container-home {
-    padding: 127px 5px;
+    padding: 130px 5px;
   }
 
   .section-title {
