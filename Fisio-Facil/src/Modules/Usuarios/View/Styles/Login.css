@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 20px;
+  padding: 60px;
   background-color: var(--color-background);
   border-radius: 10px;
 }

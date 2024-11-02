@@ -55,7 +55,7 @@
 }
 
 .input-field * {
-  color: var(--color-primary);
+color: var(--color-background);;
 }
 
 .input-field .icon {
@@ -99,7 +99,7 @@
   box-shadow: 0 0 10px var(--shadow);
   padding: 10px;
   background: var(--color-primary);
-  color: var(--color-text);
+  color: var(--color-primary-dark);
   font-size: 16px;
   font-weight: 600;
   transition: background-color 0.3s ease, color 0.3s ease;

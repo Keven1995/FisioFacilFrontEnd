@@ -42,7 +42,7 @@ const Home = () => {
             className="btn btn-success mt-3 action-btn"
             onClick={() => (window.location.href = "/planos")}
           >
-            Conheça nossos Planos
+            Conheça nossos planos
           </button>
         </div>
       </div>

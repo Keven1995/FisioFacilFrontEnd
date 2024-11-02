@@ -26,12 +26,13 @@ section {
 .section-text {
   font-size: 20px;
   line-height: 1.8; /* Melhor espaçamento entre linhas */
-  text-align: justify; /* Para melhorar a leitura em telas menores */
+  text-align: c; /* Para melhorar a leitura em telas menores */
 }
 
 /* Botão */
 .btn-success {
   background-color: #28a745;
+  color:#ffffff;
   border: none;
   padding: 10px 30px;
   border-radius: 30px;

@@ -18,6 +18,7 @@ import Servicos from "./Modules/Servicos/View/Servicos";
 import About from "./Components/About/View/About";
 import Home from "./Components/Home/View/Home";
 import Contact from './Modules/Contato/View/Contact';
+import Planos from "./Components/Planos/View/Planos";
 
 function App() {
   const location = useLocation();
@@ -42,6 +43,7 @@ function App() {
         <Route path="/colunaVertebral" element={<ColunaVertebral />} />
         <Route path="/contato" element={<Contact />} />
         <Route path="/sobre" element={<About />} />
+        <Route path="/planos" element={<Planos />} />
       </Routes>
 
       {!isLoginPage && <Footer />}

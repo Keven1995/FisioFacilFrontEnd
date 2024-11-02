@@ -1,0 +1,119 @@
+/* Container principal dos serviços */
+.container-planos {
+  width: 100%;
+  padding: 160px 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+/* Título dos serviços */
+.planos-title {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Cartão de serviço */
+.planos-card {
+  background-color: #a0e57b;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.planos-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagem do serviço */
+.planos-card-img {
+  border-radius: 15px;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Título do serviço */
+.planos-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Responsividade para telas médias */
+@media (max-width: 1024px) {
+  .container-planos {
+    padding: 60px 15px;
+  }
+
+  .planos-title {
+    font-size: 2.2rem;
+  }
+
+  .planos-card {
+    padding: 15px;
+  }
+
+  .planos-card-img {
+    height: 180px;
+  }
+
+  .planos-card-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .container-planos {
+    padding: 40px 10px;
+  }
+
+  .planos-title {
+    font-size: 2rem;
+  }
+
+  .planos-card {
+    padding: 10px;
+  }
+
+  .planos-card-img {
+    height: 160px;
+  }
+
+  .planos-card-title {
+    font-size: 1rem;
+  }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+  .container-planos {
+    padding: 127px 5px;
+  }
+
+  .planos-title {
+    font-size: 1.8rem;
+  }
+
+  .planos-card {
+    padding: 8px;
+  }
+
+  .planos-card-img {
+    height: 140px;
+  }
+
+  .planos-card-title {
+    font-size: 0.9rem;
+  }
+}
