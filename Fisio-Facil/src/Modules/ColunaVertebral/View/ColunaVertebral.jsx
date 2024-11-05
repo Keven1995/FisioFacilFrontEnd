@@ -7,7 +7,7 @@ const ColunaVertebral = () => {
   const navigate = useNavigate();
 
   const handleClick = (path) => {
-    navigate(path);
+    navigate(path, { state: { from: "/ColunaVertebral" } });
   };
 
   return (
