@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../Context/AuthProvider.jsx";
 import "../View/Styles/Login.css";
 import "../../../App.css";
 
@@ -9,7 +10,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
-  const from = location.state?.from || "/";
+  const { login } = useAuth();
+  const from = location.state?.from || "/ColunaVertebral";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,16 +25,17 @@ const Login = () => {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error('A resposta da rede não foi ok'); // Mensagem em português
+          throw new Error('A resposta da rede não foi ok'); 
         }
         return response.json();
       })
       .then((data) => {
-        console.log('Login bem-sucedido:', data); // Mensagem em português
+        console.log('Login bem-sucedido:', data); 
+        login();
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.error('Houve um problema com a operação de fetch:', error); // Mensagem em português
+        console.error('Houve um problema com a operação de fetch:', error); 
       });
   };
 

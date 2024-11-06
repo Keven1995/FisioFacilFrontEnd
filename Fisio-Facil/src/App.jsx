@@ -19,6 +19,11 @@ import About from "./Components/About/View/About";
 import Home from "./Components/Home/View/Home";
 import Contact from './Modules/Contato/View/Contact';
 import Planos from "./Components/Planos/View/Planos";
+import Cervical from "./Modules/ColunaVertebral/View/membros/Cervical";
+import Lombar from "./Modules/ColunaVertebral/View/membros/Lombar";
+import Sacral from "./Modules/ColunaVertebral/View/membros/Sacral";
+import Toracica from "./Modules/ColunaVertebral/View/membros/Toracica";
+
 
 function App() {
   const location = useLocation();
@@ -44,6 +49,10 @@ function App() {
         <Route path="/contato" element={<Contact />} />
         <Route path="/sobre" element={<About />} />
         <Route path="/planos" element={<Planos />} />
+        <Route path="/cervical" element={<Cervical />} />
+        <Route path="/lombar" element={<Lombar />} />
+        <Route path="/sacral" element={<Sacral />} />
+        <Route path="/toracica" element={<Toracica />} />
       </Routes>
 
       {!isLoginPage && <Footer />}
