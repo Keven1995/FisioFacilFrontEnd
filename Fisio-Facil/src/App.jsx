@@ -23,6 +23,14 @@ import Cervical from "./Modules/ColunaVertebral/View/membros/Cervical";
 import Lombar from "./Modules/ColunaVertebral/View/membros/Lombar";
 import Sacral from "./Modules/ColunaVertebral/View/membros/Sacral";
 import Toracica from "./Modules/ColunaVertebral/View/membros/Toracica";
+import Joelho from "./Modules/MembrosInferiores/View/membros/Joelho";
+import Pe from "./Modules/MembrosInferiores/View/membros/Pe";
+import Tornozelo from "./Modules/MembrosInferiores/View/membros/Tornozelo";
+import Quadril from "./Modules/MembrosInferiores/View/membros/Quadril";
+import Punho from "./Modules/MembrosSuperiores/View/membros/Punho";
+import Ombro from "./Modules/MembrosSuperiores/View/membros/Ombro";
+import Mao from "./Modules/MembrosSuperiores/View/membros/Mao";
+import Cotovelo from "./Modules/MembrosSuperiores/View/membros/Cotovelo";
 
 
 function App() {
@@ -53,6 +61,15 @@ function App() {
         <Route path="/lombar" element={<Lombar />} />
         <Route path="/sacral" element={<Sacral />} />
         <Route path="/toracica" element={<Toracica />} />
+        <Route path="/joelho" element={<Joelho />} />
+        <Route path="/pe" element={<Pe />} />
+        <Route path="/tornozelo" element={<Tornozelo />} />
+        <Route path="/quadril" element={<Quadril />} />
+        <Route path="/punho" element={<Punho />} />
+        <Route path="/ombro" element={<Ombro />} />
+        <Route path="/mao" element={<Mao />} />
+        <Route path="/cotovelo" element={<Cotovelo />} />
+
       </Routes>
 
       {!isLoginPage && <Footer />}
