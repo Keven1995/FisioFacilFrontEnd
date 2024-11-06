@@ -1,0 +1,134 @@
+.membro-card {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.membro-image {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+/* Estilos para a página de membros */
+.member-page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 180px 10px 10px 10px;
+  text-align: center;
+}
+
+.category-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.member-subtitle {
+  font-size: 1.8rem;
+  color: #666;
+  margin-top: 0.5rem; /* Adiciona margem acima para separação */
+  margin-bottom: 1.5rem;
+}
+
+/* Card de descrição do pacote */
+.member-card {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f8f9fa;
+  margin-top: 1rem; /* Adiciona espaçamento entre o card e o título */
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Descrição dentro do card */
+.member-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Botões de plano */
+.plan-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.plan-buttons .btn {
+  width: 100px;
+  font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .category-title {
+    font-size: 2rem;
+  }
+
+  .member-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .plan-buttons .btn {
+    width: 90px;
+    font-size: 0.9rem;
+  }
+
+  .membro-card {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .membro-image {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .member-page-container {
+    padding: 150px 10px 10px 10px;
+  }
+
+  .category-title {
+    font-size: 1.8rem;
+  }
+
+  .member-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .member-description {
+    font-size: 0.95rem;
+  }
+
+  .plan-buttons {
+    justify-content: center;
+  }
+
+  .plan-buttons .btn {
+    width: 80px;
+    font-size: 0.85rem;
+  }
+  .membro-card {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .membro-image {
+    margin-right: 20px;
+  }
+}
