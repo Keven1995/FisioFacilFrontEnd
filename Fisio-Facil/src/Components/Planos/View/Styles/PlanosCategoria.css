@@ -1,6 +1,33 @@
 .planos-categorias-container {
-    width: 100%;
-    padding: 290px 20px 285px 20px;
-    margin: 40px auto;
-    max-width: 1200px;
+  width: 100%;
+  padding: 290px 20px 285px 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+/* Responsividade para telas médias */
+@media (max-width: 1024px) {
+  .planos-categorias-container {
+    padding: 247px 15px 210px 15px;
+    margin-bottom: 0px;
+    margin-top: 157px;
   }
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .planos-categorias-container {
+    padding: 247px 15px 210px 15px;
+    margin-bottom: 0px;
+    margin-top: 157px;
+  }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+  .planos-categorias-container {
+    padding: 247px 15px 210px 15px;
+    margin-bottom: 0px;
+    margin-top: 157px;
+  }
+}

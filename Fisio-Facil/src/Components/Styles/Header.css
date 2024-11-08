@@ -3,7 +3,7 @@
   top: 0; /* Alinha o header ao topo da página */
   width: 100%; /* O header ocupa a largura total da página */
   z-index: 1000; /* Coloca o header acima de outros elementos */
-  background-color: #28a745; /* Mantém a cor de fundo */
+  background-color: #11c26c; /* Mantém a cor de fundo */
   padding: 5px 0; /* Ajuste no espaçamento vertical */
 }
 
@@ -73,7 +73,7 @@
     position: absolute;
     top: 50px; /* Para posicionar o menu abaixo do header */
     left: 250px;
-    background-color: #28a745; /* Fundo branco */
+    background-color: #11c26c; /* Fundo branco */
     box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.4); /* Sombra no menu */
     border-radius: 8px;
     padding: 10px 0;

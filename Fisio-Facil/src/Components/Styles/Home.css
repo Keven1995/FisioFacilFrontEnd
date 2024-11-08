@@ -19,7 +19,7 @@ section {
 /* Títulos das Seções */
 .section-title {
   font-size: 26px;
-  color: #28a745;
+  color: #11c26c;
 }
 
 /* Texto das Seções */
@@ -31,7 +31,7 @@ section {
 
 /* Botão */
 .btn-success {
-  background-color: #28a745;
+  background-color: #11c26c;
   color:#ffffff;
   border: none;
   padding: 10px 30px;
@@ -103,7 +103,7 @@ section {
   }
 
   .btn-success {
-    width: 100%; /* Botão em largura total para telas muito pequenas */
+    width: 80%; /* Botão em largura total para telas muito pequenas */
     padding: 10px;
   }
 }

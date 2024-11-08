@@ -27,7 +27,7 @@ const Planos = () => {
             textAlign: "center",
             margin: "10px",
           }}
-          onClick={() => handleClick("/PlanoBasico")}
+          onClick={() => handleClick("/planoBasico")}
         >
           Básico
         </div>
@@ -42,7 +42,7 @@ const Planos = () => {
             textAlign: "center",
             margin: "10px",
           }}
-          onClick={() => handleClick("/PlanoIntermediario")}
+          onClick={() => handleClick("/planoIntermediario")}
         >
           INTERMEDIÁRIO
         </div>
@@ -57,7 +57,7 @@ const Planos = () => {
             textAlign: "center",
             margin: "10px",
           }}
-          onClick={() => handleClick("/PlanoPlus")}
+          onClick={() => handleClick("/planoPlus")}
         >
           PLUS
         </div>
