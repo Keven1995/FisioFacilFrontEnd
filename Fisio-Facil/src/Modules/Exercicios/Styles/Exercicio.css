@@ -1,0 +1,33 @@
+.exercicios-container {
+    width: 100%;
+    padding: 323px 20px 323px 20px;
+    margin: 40px auto;
+    max-width: 1200px;
+  }
+  
+  /* Responsividade para telas médias */
+  @media (max-width: 1024px) {
+    .exercicios-container {
+      padding: 247px 15px 210px 15px;
+      margin-bottom: 0px;
+      margin-top: 157px;
+    }
+  }
+  
+  /* Responsividade para telas pequenas */
+  @media (max-width: 768px) {
+    .exercicios-container {
+      padding: 247px 15px 210px 15px;
+      margin-bottom: 0px;
+      margin-top: 157px;
+    }
+  }
+  
+  /* Responsividade para telas muito pequenas */
+  @media (max-width: 480px) {
+    .exercicios-container {
+      padding: 247px 15px 210px 15px;
+      margin-bottom: 0px;
+      margin-top: 157px;
+    }
+  }

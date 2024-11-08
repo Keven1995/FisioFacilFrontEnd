@@ -1,6 +1,6 @@
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import {
   BrowserRouter as Router,
   Route,
@@ -19,7 +19,7 @@ import CategoriaMembros from "./Modules/CategoriaMembros/View/CategoriaMembros";
 import Servicos from "./Modules/Servicos/View/Servicos";
 import About from "./Components/About/View/About";
 import Home from "./Components/Home/View/Home";
-import Contact from './Modules/Contato/View/Contact';
+import Contact from "./Modules/Contato/View/Contact";
 import Planos from "./Components/Planos/View/Planos";
 import Cervical from "./Modules/ColunaVertebral/View/membros/Cervical";
 import Lombar from "./Modules/ColunaVertebral/View/membros/Lombar";
@@ -36,7 +36,18 @@ import Cotovelo from "./Modules/MembrosSuperiores/View/membros/Cotovelo";
 import PlanoBasico from "./Components/Planos/View/PlanoBasico";
 import PlanoIntermediario from "./Components/Planos/View/PlanoIntermediario";
 import PlanoPlus from "./Components/Planos/View/PlanoPlus";
-
+import CervicalExercicio from "./Modules/Exercicios/ColunaVertebral/CervicalExercicio";
+import LombarExercicio from "./Modules/Exercicios/ColunaVertebral/LombarExercicio";
+import SacralExercicio from "./Modules/Exercicios/ColunaVertebral/SacralExercicio";
+import ToracicaExercicio from "./Modules/Exercicios/ColunaVertebral/ToracicaExercicio";
+import JoelhoExercicio from "./Modules/Exercicios/MembrosInferiores/JoelhoExercicio";
+import QuadrilExercicio from "./Modules/Exercicios/MembrosInferiores/QuadrilExercicio";
+import PeExercicio from "./Modules/Exercicios/MembrosInferiores/PeExercicio";
+import TornozeloExercicio from "./Modules/Exercicios/MembrosInferiores/TornozeloExercicio";
+import PunhoExercicio from "./Modules/Exercicios/MembrosSuperiores/PunhoExercicio";
+import CotoveloExercicio from "./Modules/Exercicios/MembrosSuperiores/CotoveloExercicio";
+import MaoExercicio from "./Modules/Exercicios/MembrosSuperiores/MaoExercicio";
+import OmbroExercicio from "./Modules/Exercicios/MembrosSuperiores/OmbroExercicio";
 
 function App() {
   const location = useLocation();
@@ -66,18 +77,29 @@ function App() {
         <Route path="/planoIntermediario" element={<PlanoIntermediario />} />
         <Route path="/planoPlus" element={<PlanoPlus />} />
         <Route path="/cervical" element={<Cervical />} />
+        <Route path="/cervicalExercicio" element={<CervicalExercicio />} />
         <Route path="/lombar" element={<Lombar />} />
+        <Route path="/lombarExercicio" element={<LombarExercicio />} />
         <Route path="/sacral" element={<Sacral />} />
+        <Route path="/sacralExercicio" element={<SacralExercicio />} />
         <Route path="/toracica" element={<Toracica />} />
+        <Route path="/toracicaExercicio" element={<ToracicaExercicio />} />
         <Route path="/joelho" element={<Joelho />} />
+        <Route path="/joelhoExercicio" element={<JoelhoExercicio />} />
         <Route path="/pe" element={<Pe />} />
+        <Route path="/peExercicio" element={<PeExercicio />} />
         <Route path="/tornozelo" element={<Tornozelo />} />
+        <Route path="/tornozeloExercicio" element={<TornozeloExercicio />} />
         <Route path="/quadril" element={<Quadril />} />
+        <Route path="/quadrilExercicio" element={<QuadrilExercicio />} />
         <Route path="/punho" element={<Punho />} />
+        <Route path="/punhoExercicio" element={<PunhoExercicio />} />
         <Route path="/ombro" element={<Ombro />} />
+        <Route path="/ombroExercicio" element={<OmbroExercicio />} />
         <Route path="/mao" element={<Mao />} />
+        <Route path="/maoExercicio" element={<MaoExercicio />} />
         <Route path="/cotovelo" element={<Cotovelo />} />
-
+        <Route path="/cotoveloExercicio" element={<CotoveloExercicio />} />
       </Routes>
 
       {!isLoginPage && <Footer />}
