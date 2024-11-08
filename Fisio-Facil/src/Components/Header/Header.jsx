@@ -11,6 +11,7 @@ const Header = () => {
   const { isAuthenticated, userName, logout } = useAuth();
   const navigate = useNavigate();
 
+  
   const toggleNavMenu = () => {
     setIsNavOpen(!isNavOpen); // Inverte o estado do menu de navegação
   };
