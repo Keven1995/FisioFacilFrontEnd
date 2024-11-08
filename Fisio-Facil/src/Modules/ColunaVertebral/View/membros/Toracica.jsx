@@ -4,6 +4,11 @@ import "./Styles/Membro.css";
 import Toracicaimg from "../membros/img/toracica.jpg";
 
 const Toracica = () => {
+
+  const handleClick = (path) => {
+    window.location.href = path;
+  };
+
   return (
     <div className="member-page-container">
       <h1 className="category-title">COLUNA VERTEBRAL</h1>
@@ -21,9 +26,24 @@ const Toracica = () => {
             essa área e prevenir dores.
           </p>
           <div className="plan-buttons">
-            <button className="btn btn-outline-success">Básico</button>
-            <button className="btn btn-outline-success">Intermediário</button>
-            <button className="btn btn-outline-success">Plus</button>
+            <button
+              className="btn btn-outline-success"
+              onClick={() => handleClick("/planoBasico")}
+            >
+              Básico
+            </button>
+            <button
+              className="btn btn-outline-success"
+              onClick={() => handleClick("/planoIntermediario")}
+            >
+              Intermediário
+            </button>
+            <button
+              className="btn btn-outline-success"
+              onClick={() => handleClick("/planoPlus")}
+            >
+              Plus
+            </button>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 /* Container principal dos serviços */
 .container-planos {
   width: 100%;
-  padding: 160px 20px;
+  padding: 160px 20px 240px 20px;
   margin: 40px auto;
   max-width: 1200px;
 }

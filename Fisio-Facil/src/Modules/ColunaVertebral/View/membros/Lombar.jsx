@@ -4,6 +4,11 @@ import "./Styles/Membro.css";
 import Lombarimg from "../membros/img/lombar.jpg";
 
 const Lombar = () => {
+
+  const handleClick = (path) => {
+    window.location.href = path;
+  };
+
   return (
     <div className="member-page-container">
       <h1 className="category-title">COLUNA VERTEBRAL</h1>
@@ -25,9 +30,24 @@ const Lombar = () => {
             atividades diárias.
           </p>
           <div className="plan-buttons">
-            <button className="btn btn-outline-success">Básico</button>
-            <button className="btn btn-outline-success">Intermediário</button>
-            <button className="btn btn-outline-success">Plus</button>
+            <button
+              className="btn btn-outline-success"
+              onClick={() => handleClick("/planoBasico")}
+            >
+              Básico
+            </button>
+            <button
+              className="btn btn-outline-success"
+              onClick={() => handleClick("/planoIntermediario")}
+            >
+              Intermediário
+            </button>
+            <button
+              className="btn btn-outline-success"
+              onClick={() => handleClick("/planoPlus")}
+            >
+              Plus
+            </button>
           </div>
         </div>
       </div>

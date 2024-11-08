@@ -33,6 +33,9 @@ import Punho from "./Modules/MembrosSuperiores/View/membros/Punho";
 import Ombro from "./Modules/MembrosSuperiores/View/membros/Ombro";
 import Mao from "./Modules/MembrosSuperiores/View/membros/Mao";
 import Cotovelo from "./Modules/MembrosSuperiores/View/membros/Cotovelo";
+import PlanoBasico from "./Components/Planos/View/PlanoBasico";
+import PlanoIntermediario from "./Components/Planos/View/PlanoIntermediario";
+import PlanoPlus from "./Components/Planos/View/PlanoPlus";
 
 
 function App() {
@@ -59,6 +62,9 @@ function App() {
         <Route path="/contato" element={<Contact />} />
         <Route path="/sobre" element={<About />} />
         <Route path="/planos" element={<Planos />} />
+        <Route path="/planoBasico" element={<PlanoBasico />} />
+        <Route path="/planoIntermediario" element={<PlanoIntermediario />} />
+        <Route path="/planoPlus" element={<PlanoPlus />} />
         <Route path="/cervical" element={<Cervical />} />
         <Route path="/lombar" element={<Lombar />} />
         <Route path="/sacral" element={<Sacral />} />

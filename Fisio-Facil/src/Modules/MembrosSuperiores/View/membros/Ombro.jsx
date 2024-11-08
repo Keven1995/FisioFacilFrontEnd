@@ -4,6 +4,10 @@ import "../../../ColunaVertebral/View/membros/Styles/Membro.css";
 import Ombroimg from "../../View/img/ombro.jpeg";
 
 const Ombro = () => {
+  const handleClick = (path) => {
+    window.location.href = path;
+  };
+
   return (
     <div className="member-page-container">
       <h1 className="category-title">MEMBROS SUPERIORES</h1>
@@ -25,9 +29,24 @@ const Ombro = () => {
           </p>
 
           <div className="plan-buttons">
-            <button className="btn btn-outline-success">Básico</button>
-            <button className="btn btn-outline-success">Intermediário</button>
-            <button className="btn btn-outline-success">Plus</button>
+            <button
+              className="btn btn-outline-success"
+              onClick={() => handleClick("/planoBasico")}
+            >
+              Básico
+            </button>
+            <button
+              className="btn btn-outline-success"
+              onClick={() => handleClick("/planoIntermediario")}
+            >
+              Intermediário
+            </button>
+            <button
+              className="btn btn-outline-success"
+              onClick={() => handleClick("/planoPlus")}
+            >
+              Plus
+            </button>
           </div>
         </div>
       </div>
