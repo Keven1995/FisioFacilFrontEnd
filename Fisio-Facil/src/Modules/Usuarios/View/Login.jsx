@@ -16,7 +16,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:8080/api/usuarios/login", { // URL completa
+    fetch("http://localhost:8080/api/usuarios/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,8 +30,10 @@ const Login = () => {
         return response.json();
       })
       .then((data) => {
-        console.log('Login bem-sucedido:', data); 
-        login();
+        console.log('Login bem-sucedido:', data);
+        localStorage.setItem('authToken', data.token);
+        localStorage.setItem('userName', data.userName);
+        login(data.token, data.userName);
         navigate(from, { replace: true });
       })
       .catch((error) => {

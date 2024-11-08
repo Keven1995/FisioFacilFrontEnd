@@ -22,7 +22,7 @@
 .member-page-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 180px 10px 10px 10px;
+  padding: 190px 10px 10px 10px;
   text-align: center;
 }
 
@@ -75,6 +75,10 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
+  .member-page-container {
+    padding: 190px 35px 25px 35px;
+  }
+  
   .category-title {
     font-size: 2rem;
   }
@@ -100,7 +104,7 @@
 
 @media (max-width: 576px) {
   .member-page-container {
-    padding: 155px 35px 25px 35px;
+    padding: 190px 35px 25px 35px;
   }
 
   .category-title {
