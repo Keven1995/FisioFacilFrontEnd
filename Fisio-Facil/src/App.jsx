@@ -65,6 +65,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cadastrar" element={<SignUp />} />
         <Route path="/esqueciaSenha" element={<ForgetPassword />} />
+
+
         <Route path="/servicos" element={<Servicos />} />
         <Route path="/categoriaMembros" element={<CategoriaMembros />} />
         <Route path="/membrosInferiores" element={<MembrosInferiores />} />
@@ -72,18 +74,21 @@ function App() {
         <Route path="/colunaVertebral" element={<ColunaVertebral />} />
         <Route path="/contato" element={<Contact />} />
         <Route path="/sobre" element={<About />} />
+
         <Route path="/planos" element={<Planos />} />
-        <Route path="/planoBasico" element={<PlanoBasico />} />
-        <Route path="/planoIntermediario" element={<PlanoIntermediario />} />
-        <Route path="/planoPlus" element={<PlanoPlus />} />
-        <Route path="/cervical" element={<Cervical />} />
-        <Route path="/cervicalExercicio" element={<CervicalExercicio />} />
+        <Route path="/planoBasico/:membro" element={<PlanoBasico />} />
+        <Route path="/planoIntermediario/:membro" element={<PlanoIntermediario />} />
+        <Route path="/planoPlus/:membro" element={<PlanoPlus />} />
+
+        <Route path="/coluna-vertebral/cervical" element={<Cervical />} />
+        <Route path="/membros/cervical/exercicios" element={<CervicalExercicio />} />
         <Route path="/lombar" element={<Lombar />} />
         <Route path="/lombarExercicio" element={<LombarExercicio />} />
         <Route path="/sacral" element={<Sacral />} />
         <Route path="/sacralExercicio" element={<SacralExercicio />} />
         <Route path="/toracica" element={<Toracica />} />
         <Route path="/toracicaExercicio" element={<ToracicaExercicio />} />
+
         <Route path="/joelho" element={<Joelho />} />
         <Route path="/joelhoExercicio" element={<JoelhoExercicio />} />
         <Route path="/pe" element={<Pe />} />
@@ -92,6 +97,7 @@ function App() {
         <Route path="/tornozeloExercicio" element={<TornozeloExercicio />} />
         <Route path="/quadril" element={<Quadril />} />
         <Route path="/quadrilExercicio" element={<QuadrilExercicio />} />
+
         <Route path="/punho" element={<Punho />} />
         <Route path="/punhoExercicio" element={<PunhoExercicio />} />
         <Route path="/ombro" element={<Ombro />} />

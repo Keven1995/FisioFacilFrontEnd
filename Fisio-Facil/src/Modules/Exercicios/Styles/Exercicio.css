@@ -1,33 +1,33 @@
 .exercicios-container {
-    width: 100%;
-    padding: 323px 20px 323px 20px;
-    margin: 40px auto;
-    max-width: 1200px;
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+}
+
+/* Responsividade para telas médias */
+@media (max-width: 1024px) {
+  .exercicios-container {
+    padding: 20px 15px;
   }
-  
-  /* Responsividade para telas médias */
-  @media (max-width: 1024px) {
-    .exercicios-container {
-      padding: 247px 15px 210px 15px;
-      margin-bottom: 0px;
-      margin-top: 157px;
-    }
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .exercicios-container {
+    padding: 20px 15px;
   }
-  
-  /* Responsividade para telas pequenas */
-  @media (max-width: 768px) {
-    .exercicios-container {
-      padding: 247px 15px 210px 15px;
-      margin-bottom: 0px;
-      margin-top: 157px;
-    }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+  .exercicios-container {
+    padding: 248px 15px;
   }
-  
-  /* Responsividade para telas muito pequenas */
-  @media (max-width: 480px) {
-    .exercicios-container {
-      padding: 247px 15px 210px 15px;
-      margin-bottom: 0px;
-      margin-top: 157px;
-    }
-  }
+}
