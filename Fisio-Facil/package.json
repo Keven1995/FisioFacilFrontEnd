@@ -33,5 +33,6 @@
     "globals": "^15.9.0",
     "sass": "^1.80.6",
     "vite": "^5.4.8"
-  }
+  },
+  "proxy": "http://backend:8080"
 }

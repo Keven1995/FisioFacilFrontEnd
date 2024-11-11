@@ -13,10 +13,13 @@ const Login = () => {
   const { login } = useAuth();
   const from = location.state?.from || "/ColunaVertebral";
 
+  const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8080";
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:8080/api/usuarios/login", {
+    fetch(`${apiUrl}/api/usuarios/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

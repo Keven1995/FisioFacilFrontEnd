@@ -5,10 +5,13 @@ import "../View/Styles/ForgetPassword.css";
 const ForgetPassword = () => {
   const [email, setEmail] = useState("");
 
+  const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8080";
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:8080/api/usuarios/esqueci-senha", {
+    fetch(`${apiUrl}/api/usuarios/esqueci-senha`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
