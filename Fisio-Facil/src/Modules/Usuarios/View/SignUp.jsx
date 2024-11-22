@@ -72,7 +72,7 @@ const SignUp = () => {
           <div className="signup-link">
             <p className="p">
               Realizou o cadastro?{" "}
-              <a href="http://localhost:5173/login">Login</a>
+              <a href="https://fisio-facil-front-end.vercel.app/login">Login</a>
             </p>
           </div>
         </form>
