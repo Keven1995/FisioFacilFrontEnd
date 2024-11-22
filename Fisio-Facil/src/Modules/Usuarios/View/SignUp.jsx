@@ -28,6 +28,7 @@ const SignUp = () => {
         console.error(error);
       });
   };
+  
 
   return (
     <div className="page-wrapper">
