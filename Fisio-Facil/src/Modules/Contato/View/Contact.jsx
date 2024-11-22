@@ -1,4 +1,3 @@
-// Contact.js
 import React from "react";
 import { FaInstagram, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";

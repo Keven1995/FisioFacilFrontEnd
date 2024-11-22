@@ -6,11 +6,11 @@ export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [userName, setUserName] = useState(""); // Adiciona estado para o nome de usuário
+  const [userName, setUserName] = useState("");
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
-    const storedUserName = localStorage.getItem('userName'); // Armazena o nome do usuário no localStorage
+    const storedUserName = localStorage.getItem('userName');
     if (token && storedUserName) {
       setIsAuthenticated(true);
       setUserName(storedUserName);
@@ -19,14 +19,14 @@ export const AuthProvider = ({ children }) => {
 
   const login = (token, name) => {
     localStorage.setItem('authToken', token);
-    localStorage.setItem('userName', name); // Armazena o nome de usuário no localStorage
+    localStorage.setItem('userName', name);
     setIsAuthenticated(true);
     setUserName(name);
   };
 
   const logout = () => {
     localStorage.removeItem('authToken');
-    localStorage.removeItem('userName'); // Remove o nome de usuário do localStorage
+    localStorage.removeItem('userName'); 
     setIsAuthenticated(false);
     setUserName("");
   };

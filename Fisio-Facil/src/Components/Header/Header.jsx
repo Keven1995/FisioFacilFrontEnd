@@ -6,18 +6,18 @@ import "../Styles/Header.css";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 const Header = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false); // Estado do menu de navegação
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false); // Estado do menu do usuário
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const { isAuthenticated, userName, logout } = useAuth();
   const navigate = useNavigate();
 
   
   const toggleNavMenu = () => {
-    setIsNavOpen(!isNavOpen); // Inverte o estado do menu de navegação
+    setIsNavOpen(!isNavOpen);
   };
 
   const toggleUserMenu = () => {
-    setIsUserMenuOpen(!isUserMenuOpen); // Inverte o estado do menu do usuário
+    setIsUserMenuOpen(!isUserMenuOpen);
   };
 
   const handleLogout = () => {
