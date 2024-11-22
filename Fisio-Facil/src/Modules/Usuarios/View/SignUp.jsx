@@ -29,7 +29,6 @@ const SignUp = () => {
       });
   };
   
-
   return (
     <div className="page-wrapper">
       <div className="cadastrar-container">
