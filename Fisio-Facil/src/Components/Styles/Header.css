@@ -65,14 +65,15 @@
     display: block;
     position: relative;
     left: 575%;
+    bottom: 62px;
   }
 
   /* Menu de navegação no mobile */
   .navbar-collapse {
     display: none;
     position: absolute;
-    top: 50px; /* Para posicionar o menu abaixo do header */
-    left: 250px;
+    top: -25px; /* Para posicionar o menu abaixo do header */
+    left: 237px;
     background-color: #11c26c; /* Fundo branco */
     box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.4); /* Sombra no menu */
     border-radius: 8px;

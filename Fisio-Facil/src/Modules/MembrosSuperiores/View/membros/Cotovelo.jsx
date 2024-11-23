@@ -29,9 +29,9 @@ const Cotovelo = () => {
           </p>
 
           <div className="plan-buttons">
-            <button className="btn btn-outline-success" onClick={() => handleClick("/planoBasico")}>Básico</button>
-            <button className="btn btn-outline-success" onClick={() => handleClick("/planoIntermediario")}>Intermediário</button>
-            <button className="btn btn-outline-success" onClick={() => handleClick("/planoPlus")}>Plus</button>
+            <button className="btn btn-outline-success" onClick={() => handleClick("/planoBasico/:membro")}>Básico</button>
+            <button className="btn btn-outline-success" onClick={() => handleClick("/planoIntermediario/:membro")}>Intermediário</button>
+            <button className="btn btn-outline-success" onClick={() => handleClick("/planoPlus/:membro")}>Plus</button>
           </div>
         </div>
       </div>

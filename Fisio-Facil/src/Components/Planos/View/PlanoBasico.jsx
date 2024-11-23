@@ -1,14 +1,36 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../Planos/View/Styles/PlanosCategoria.css";
+import "./Styles/PlanosCategoria.css";
+import { useNavigate } from "react-router-dom";
 
-const PlanoBasico = () => { 
+const PlanoBasico = ({ membroSelecionado }) => {
+    const navigate = useNavigate();
+
+    const handleRedirect = () => {
+        navigate(`/membros/${membroSelecionado}/exercicios`);
+    };
+
     return (
-        <div className="planos-categorias-container">
-            <h1>Plano Básico</h1>
-            <p>Plano Básico</p>
+        <div
+            className="planos-categorias-container"
+            aria-labelledby="plano-basico-title"
+        >
+            <h1 id="plano-basico-title" className="mb-4">
+                Plano Básico
+            </h1>
+            <p>
+                Este é o plano básico que oferece funcionalidades essenciais para
+                atender às suas necessidades.
+            </p>
+            <p>
+                No plano básico, você terá acesso a <strong>3 exercícios</strong> com
+                vídeos e imagens explicativas para guiá-lo em suas atividades.
+            </p>
+            <button className="btn btn-primary mt-3" onClick={handleRedirect}>
+                Ver exercícios e alomgamentos {membroSelecionado}
+            </button>
         </div>
     );
-}
+};
 
 export default PlanoBasico;

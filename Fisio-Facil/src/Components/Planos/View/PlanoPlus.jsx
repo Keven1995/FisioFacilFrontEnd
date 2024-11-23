@@ -11,11 +11,24 @@ const PlanoPlus = ({ membroSelecionado }) => {
   };
 
   return (
-    <div className="planos-categorias-container">
-      <h1>Plano Plus</h1>
-      <p>Inclui 8 exercícios e 8 alongamentos com vídeos e imagens.</p>
+    <div
+      className="planos-categorias-container"
+      aria-labelledby="plano-plus-title"
+    >
+      <h1 id="plano-plus-title" className="mb-4">
+        Plano Plus
+      </h1>
+      <p>
+        O Plano Plus é a escolha ideal para quem deseja aproveitar ao máximo
+        todos os recursos disponíveis. Ele oferece acesso completo às práticas
+        de fisioterapia, com exercícios avançados e detalhados.
+      </p>
+      <p>
+        Neste plano, você terá acesso a <strong>todo o leque de exercícios</strong>, incluindo vídeos e imagens
+        explicativas para garantir um acompanhamento completo e eficaz.
+      </p>
       <button className="btn btn-primary mt-3" onClick={handleRedirect}>
-        Ver exercícios e alongamentos de {membroSelecionado}
+      Ver exercícios e alomgamentos {membroSelecionado}
       </button>
     </div>
   );

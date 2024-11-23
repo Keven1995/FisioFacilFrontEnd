@@ -29,19 +29,19 @@ const Cervical = () => {
           <div className="plan-buttons">
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoBasico")}
+              onClick={() => handleClick("/planoBasico/:membro")}
             >
               Básico
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoIntermediario")}
+              onClick={() => handleClick("/planoIntermediario/:membro")}
             >
               Intermediário
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoPlus")}
+              onClick={() => handleClick("/planoPlus/:membro")}
             >
               Plus
             </button>

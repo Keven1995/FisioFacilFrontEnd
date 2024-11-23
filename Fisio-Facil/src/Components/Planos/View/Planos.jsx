@@ -11,55 +11,23 @@ const Planos = () => {
   };
 
   return (
-    <div className="container-planos container text-center mt-5">
-      <h1 className="planos-title mb-5" style={{ fontFamily: "Arial", fontWeight: "bold" }}>
-        Planos
-      </h1>
+    <div className="container-planos text-center">
+      <h1 className="planos-title">Planos</h1>
 
       <div className="d-flex justify-content-around flex-wrap">
-        <div
-          className="card p-5"
-          style={{
-            width: "200px",
-            backgroundColor: "#a0e57b",
-            borderRadius: "20px",
-            cursor: "pointer",
-            textAlign: "center",
-            margin: "10px",
-          }}
-          onClick={() => handleClick("/planoBasico")}
-        >
+        <div className="planos-card" onClick={() => handleClick("/planoBasico/:membro")}>
           Básico
         </div>
 
         <div
-          className="card p-5"
-          style={{
-            width: "200px",
-            backgroundColor: "#a0e57b",
-            borderRadius: "20px",
-            cursor: "pointer",
-            textAlign: "center",
-            margin: "10px",
-          }}
-          onClick={() => handleClick("/planoIntermediario")}
+          className="planos-card"
+          onClick={() => handleClick("/planoIntermediario/:membro")}
         >
-          INTERMEDIÁRIO
+          Intermediário
         </div>
 
-        <div
-          className="card p-5"
-          style={{
-            width: "200px",
-            backgroundColor: "#a0e57b",
-            borderRadius: "20px",
-            cursor: "pointer",
-            textAlign: "center",
-            margin: "10px",
-          }}
-          onClick={() => handleClick("/planoPlus")}
-        >
-          PLUS
+        <div className="planos-card" onClick={() => handleClick("/planoPlus/:membro")}>
+          Plus
         </div>
       </div>
     </div>

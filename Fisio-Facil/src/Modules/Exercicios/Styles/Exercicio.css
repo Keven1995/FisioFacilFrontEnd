@@ -1,5 +1,5 @@
 .exercicios-container {
-  padding: 40px 20px;
+  padding: 180px 20px;
   margin: 20px auto;
   max-width: 800px;
   background-color: #f9f9f9;
@@ -14,14 +14,14 @@ h2 {
 /* Responsividade para telas médias */
 @media (max-width: 1024px) {
   .exercicios-container {
-    padding: 20px 15px;
+    padding: 181px 15px;
   }
 }
 
 /* Responsividade para telas pequenas */
 @media (max-width: 768px) {
   .exercicios-container {
-    padding: 20px 15px;
+    padding: 181px 15px;
   }
 }
 
