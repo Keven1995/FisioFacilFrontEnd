@@ -1,6 +1,6 @@
 .exercicios-container {
-  padding: 180px 20px;
-  margin: 20px auto;
+  padding: 5px 5px;
+  margin: 210px auto 76px;
   max-width: 800px;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -14,20 +14,20 @@ h2 {
 /* Responsividade para telas médias */
 @media (max-width: 1024px) {
   .exercicios-container {
-    padding: 181px 15px;
+    padding: 94px 94px;
   }
 }
 
 /* Responsividade para telas pequenas */
 @media (max-width: 768px) {
   .exercicios-container {
-    padding: 181px 15px;
+    padding: 94px 94px;
   }
 }
 
 /* Responsividade para telas muito pequenas */
 @media (max-width: 480px) {
   .exercicios-container {
-    padding: 248px 15px;
+    padding: 94px 94px;
   }
 }

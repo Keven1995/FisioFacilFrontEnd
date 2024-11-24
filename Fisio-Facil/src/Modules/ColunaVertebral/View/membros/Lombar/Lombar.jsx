@@ -1,9 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Styles/Membro.css";
-import Sacralimg from "../membros/img/sacral.jpg";
+import "../Styles/Membro.css";
+import Lombarimg from "../img/lombar.jpg";
 
-const Sacral = () => {
+const Lombar = () => {
 
   const handleClick = (path) => {
     window.location.href = path;
@@ -12,21 +12,22 @@ const Sacral = () => {
   return (
     <div className="member-page-container">
       <h1 className="category-title">COLUNA VERTEBRAL</h1>
-      <h2 className="member-subtitle">Sacral</h2>
+      <h2 className="member-subtitle">Lombar</h2>
       <div className="membro-card">
-        <img src={Sacralimg} alt="sacral" className="membro-image" />
+        <img src={Lombarimg} alt="lombar" className="membro-image" />
       </div>
 
       <div className="member-card card shadow">
         <div className="card-body">
           <p className="member-description">
-            A região sacral é composta por cinco vértebras fundidas na base da
-            coluna vertebral, formando o sacro, que conecta a coluna à pelve.
-            Ela é essencial para a estabilidade do tronco e a transferência de
-            peso entre a parte superior e inferior do corpo. Este pacote oferece
-            exercícios e orientações específicas para fortalecer a região
-            sacral, promovendo estabilidade pélvica e ajudando a prevenir dores
-            e desconfortos nessa área.
+            A região lombar é composta por cinco vértebras localizadas na parte
+            inferior da coluna vertebral, sendo responsável por suportar grande
+            parte do peso do corpo e permitir movimentos como flexão e extensão
+            do tronco. Por sua importância na estabilização e mobilidade, a
+            lombar é uma área vulnerável a tensões e lesões. Este pacote inclui
+            exercícios e orientações específicos para fortalecer e estabilizar a
+            região lombar, promovendo alívio de dores e maior resistência para
+            atividades diárias.
           </p>
           <div className="plan-buttons">
             <button
@@ -54,4 +55,4 @@ const Sacral = () => {
   );
 };
 
-export default Sacral;
+export default Lombar;

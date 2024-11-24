@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./../Styles/Exercicio.css";
+import "../Styles/Exercicio.css";
 
-const CervicalExercicio = () => {
+const CervicalListaExercicio = () => {
   const [showExercises, setShowExercises] = useState(false);
 
   const exercises = [
@@ -10,37 +10,37 @@ const CervicalExercicio = () => {
       title: "Exercício 1: Flexão de Cervical",
       description: "Este exercício consiste em movimentar o pescoço para frente, alongando a cervical.",
       video: "https://via.placeholder.com/150", // Coloque a URL do vídeo aqui
+      link: "/membros/cervical/exercicio-flexao-cervical", // Link exclusivo
     },
     {
       title: "Exercício 2: Extensão de Cervical",
       description: "Movimento para trás do pescoço, promovendo a extensão da cervical.",
       video: "https://via.placeholder.com/150",
+      link: "/membros/cervical/exercicio-extensao-cervical", // Link exclusivo
     },
     {
       title: "Exercício 3: Rotação de Cervical",
       description: "Rotacione lentamente o pescoço para um lado e depois para o outro.",
       video: "https://via.placeholder.com/150",
+      link: "/membros/cervical/exercicio-rotacao-cervical", // Link exclusivo
     },
     {
       title: "Exercício 4: Inclinação Lateral",
       description: "Incline a cabeça lateralmente, como se tentasse tocar o ombro.",
       video: "https://via.placeholder.com/150",
+      link: "/membros/cervical/exercicio-inclinacao-lateral", // Link exclusivo
     },
     {
       title: "Exercício 5: Elevação de Ombros",
       description: "Eleve os ombros para aliviar tensões na cervical.",
       video: "https://via.placeholder.com/150",
+      link: "/membros/cervical/exercicio-elevacao-ombros", // Link exclusivo
     },
   ];
 
-  const redirectToStretches = () => {
-    // Navega para a página de exercicios
-    window.location.href = "/exercicios";
-  };
-
-  const redirectToExercise = (exerciseTitle) => {
-    // Navega para a página do exercício
-    console.log(`Redirecionar para a página de: ${exerciseTitle}`);
+  const redirectToExercise = (exerciseLink) => {
+    // Navega para a página específica do exercício
+    window.location.href = exerciseLink;
   };
 
   return (
@@ -73,7 +73,7 @@ const CervicalExercicio = () => {
                   >
                     <span
                       className="exercise-title"
-                      onClick={() => redirectToExercise(exercise.title)}
+                      onClick={() => redirectToExercise(exercise.link)}
                       style={{ cursor: "pointer", textDecoration: "underline" }}
                     >
                       {exercise.title}
@@ -96,9 +96,9 @@ const CervicalExercicio = () => {
                       <p>{exercise.description}</p>
                       <button
                         className="btn btn-secondary"
-                        onClick={redirectToStretches}
+                        onClick={() => redirectToExercise(exercise.link)}
                       >
-                        Exercicios
+                        Ir para Exercício
                       </button>
                     </div>
                   </div>
@@ -112,4 +112,4 @@ const CervicalExercicio = () => {
   );
 };
 
-export default CervicalExercicio;
+export default CervicalListaExercicio;

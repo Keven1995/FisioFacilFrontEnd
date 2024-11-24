@@ -1,9 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Styles/Membro.css";
-import Cervicalimg from "../membros/img/cervical.jpg";
+import "../Styles/Membro.css";
+import Toracicaimg from "../img/toracica.jpg";
 
-const Cervical = () => {
+const Toracica = () => {
 
   const handleClick = (path) => {
     window.location.href = path;
@@ -12,20 +12,19 @@ const Cervical = () => {
   return (
     <div className="member-page-container">
       <h1 className="category-title">COLUNA VERTEBRAL</h1>
-      <h2 className="member-subtitle">Cervical</h2>
+      <h2 className="member-subtitle">Torácica</h2>
       <div className="membro-card">
-        <img src={Cervicalimg} alt="Cervical" className="membro-image" />
+        <img src={Toracicaimg} alt="Toracica" className="membro-image" />
       </div>
 
       <div className="member-card card shadow">
         <div className="card-body">
           <p className="member-description">
-            A região cervical sustenta a cabeça e permite uma grande amplitude
-            de movimentos no pescoço. Este pacote oferece exercícios específicos
-            e orientações para fortalecer a cervical, promovendo estabilidade e
-            prevenindo dores.
+            A região torácica é responsável por sustentar a parte superior do
+            tronco e é composta por 12 vértebras conectadas às costelas. Esse
+            pacote oferece exercícios e orientações específicas para fortalecer
+            essa área e prevenir dores.
           </p>
-
           <div className="plan-buttons">
             <button
               className="btn btn-outline-success"
@@ -52,4 +51,4 @@ const Cervical = () => {
   );
 };
 
-export default Cervical;
+export default Toracica;
