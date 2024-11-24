@@ -11,7 +11,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: process.env.VITE_API_URL || 'http://localhost:8080',
+        target: process.env.VITE_API_URL || 'fisiofacil-backend-byeacga0d9a3d7fc.canadacentral-01.azurewebsites.net',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
