@@ -18,6 +18,19 @@ h2 {
   }
 }
 
+@media (max-width: 1080px) {
+  .exercicios-container {
+    padding: 94px 94px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .exercicios-container {
+    padding: 94px 94px;
+    margin: 235px auto 88px;
+  }
+}
+
 /* Responsividade para telas pequenas */
 @media (max-width: 768px) {
   .exercicios-container {
