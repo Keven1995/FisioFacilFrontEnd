@@ -1,58 +1,78 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/Exercicio.css";
 
-const CervicalListaExercicio = () => {
+const CervicalListaExercicio = ({ membroSelecionado }) => {
   const [showExercises, setShowExercises] = useState(false);
+  const [filteredExercises, setFilteredExercises] = useState([]);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const exercises = [
     {
       title: "Exercício 1: Flexão de Cervical",
-      description: "Este exercício consiste em movimentar o pescoço para frente, alongando a cervical.",
-      video: "https://via.placeholder.com/150", // Coloque a URL do vídeo aqui
-      link: "/membros/cervical/exercicio-flexao-cervical", // Link exclusivo
+      description: "Movimente o pescoço para frente, alongando a cervical.",
+      video: "https://via.placeholder.com/150",
+      link: `/membros/${membroSelecionado}/exercicio-flexao-cervical`,
     },
     {
       title: "Exercício 2: Extensão de Cervical",
       description: "Movimento para trás do pescoço, promovendo a extensão da cervical.",
       video: "https://via.placeholder.com/150",
-      link: "/membros/cervical/exercicio-extensao-cervical", // Link exclusivo
+      link: `/membros/${membroSelecionado}/exercicio-extensao-cervical`,
     },
     {
       title: "Exercício 3: Rotação de Cervical",
       description: "Rotacione lentamente o pescoço para um lado e depois para o outro.",
       video: "https://via.placeholder.com/150",
-      link: "/membros/cervical/exercicio-rotacao-cervical", // Link exclusivo
+      link: `/membros/${membroSelecionado}/exercicio-rotacao-cervical`,
     },
     {
       title: "Exercício 4: Inclinação Lateral",
       description: "Incline a cabeça lateralmente, como se tentasse tocar o ombro.",
       video: "https://via.placeholder.com/150",
-      link: "/membros/cervical/exercicio-inclinacao-lateral", // Link exclusivo
+      link: `/membros/${membroSelecionado}/exercicio-inclinacao-lateral`,
     },
     {
       title: "Exercício 5: Elevação de Ombros",
       description: "Eleve os ombros para aliviar tensões na cervical.",
       video: "https://via.placeholder.com/150",
-      link: "/membros/cervical/exercicio-elevacao-ombros", // Link exclusivo
+      link: `/membros/${membroSelecionado}/exercicio-elevacao-ombros`,
     },
   ];
 
+  // Filtrar exercícios com base no plano
+  useEffect(() => {
+    const query = new URLSearchParams(location.search);
+    const plano = query.get("plano");
+
+    let filtered;
+    if (plano === "basico") {
+      filtered = exercises.slice(0, 3); // 3 primeiros exercícios
+    } else if (plano === "intermediario") {
+      filtered = exercises.slice(0, 5); // 5 primeiros exercícios
+    } else {
+      filtered = exercises; // Todos os exercícios para o plano "Plus"
+    }
+
+    setFilteredExercises(filtered);
+  }, [location.search]);
+
   const redirectToExercise = (exerciseLink) => {
-    // Navega para a página específica do exercício
-    window.location.href = exerciseLink;
+    navigate(exerciseLink);
   };
 
   return (
     <div className="exercicios-container container">
-      <h2 className="text-center mb-4">Cervical</h2>
+      <h2 className="text-center mb-4">{membroSelecionado.toUpperCase()}</h2>
       <div className="d-flex justify-content-center gap-3 mb-3">
         <button
           className="btn btn-primary"
           onClick={() => setShowExercises(!showExercises)}
           aria-expanded={showExercises}
         >
-          Exercícios
+          {showExercises ? "Esconder Exercícios" : "Exibir Exercícios"}
         </button>
       </div>
 
@@ -60,7 +80,7 @@ const CervicalListaExercicio = () => {
         <div>
           <h4>Lista de Exercícios</h4>
           <div className="accordion" id="exercisesAccordion">
-            {exercises.map((exercise, index) => (
+            {filteredExercises.map((exercise, index) => (
               <div className="accordion-item" key={index}>
                 <h2 className="accordion-header">
                   <button
@@ -73,7 +93,6 @@ const CervicalListaExercicio = () => {
                   >
                     <span
                       className="exercise-title"
-                      onClick={() => redirectToExercise(exercise.link)}
                       style={{ cursor: "pointer", textDecoration: "underline" }}
                     >
                       {exercise.title}

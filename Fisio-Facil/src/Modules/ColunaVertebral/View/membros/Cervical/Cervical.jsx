@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/Membro.css";
 import Cervicalimg from "../img/cervical.jpg";
 
 const Cervical = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = (path) => {
-    window.location.href = path;
+    navigate(path);
   };
 
   const handleImageLoad = () => {
@@ -24,7 +26,7 @@ const Cervical = () => {
         <img
           src={Cervicalimg}
           alt="Cervical"
-          className={`membro-image ${isLoaded ? "" : "d-none"}`}
+          className={`membro-image ${isLoaded ? "loaded" : ""}`}
           loading="lazy"
           onLoad={handleImageLoad}
         />
@@ -42,19 +44,22 @@ const Cervical = () => {
           <div className="plan-buttons">
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoBasico/:membro")}
+              onClick={() => handleClick("/planoBasico/cervical")}
+              aria-label="Escolher plano básico para cervical"
             >
               Básico
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoIntermediario/:membro")}
+              onClick={() => handleClick("/planoIntermediario/cervical")}
+              aria-label="Escolher plano intermediário para cervical"
             >
               Intermediário
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoPlus/:membro")}
+              onClick={() => handleClick("/planoPlus/cervical")}
+              aria-label="Escolher plano plus para cervical"
             >
               Plus
             </button>
