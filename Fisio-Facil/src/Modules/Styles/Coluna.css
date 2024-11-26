@@ -1,91 +1,91 @@
 /* ColunaVertebral.css */
 .coluna-vertebral-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 200px 30px 151px 30px;
-  }
-  
-  /* Título Principal */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 201px 0px 50px;
+  margin: 53px auto;
+}
+
+/* Título Principal */
+.coluna-title {
+  background-color: #11c26c;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Container de Botões */
+.coluna-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Botão */
+.coluna-button {
+  width: 250px;
+  background-color: #d4f1a1;
+  color: #333;
+  border-radius: 20px;
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.coluna-button:hover {
+  background-color: #bfe083;
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+
+/* Telas grandes (desktops) */
+@media (min-width: 1200px) {
   .coluna-title {
-    background-color: #11c26c;
-    color: #ffffff;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
+    font-size: 2em;
+    padding: 15px 30px;
+    max-width: 800px;
   }
-  
-  /* Container de Botões */
-  .coluna-buttons-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  /* Botão */
+
   .coluna-button {
-    width: 250px;
-    background-color: #d4f1a1;
-    color: #333;
-    border-radius: 20px;
-    padding: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
+    width: 300px;
+    padding: 20px;
   }
-  
-  .coluna-button:hover {
-    background-color: #bfe083;
-    transform: scale(1.05);
+}
+
+/* Telas médias (tablets) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .coluna-title {
+    font-size: 1.8em;
+    padding: 12px 25px;
   }
-  
-  /* Responsividade */
-  
-  /* Telas grandes (desktops) */
-  @media (min-width: 1200px) {
-    .coluna-title {
-      font-size: 2em;
-      padding: 15px 30px;
-      max-width: 800px;
-    }
-  
-    .coluna-button {
-      width: 300px;
-      padding: 20px;
-    }
+
+  .coluna-button {
+    width: 275px;
   }
-  
-  /* Telas médias (tablets) */
-  @media (min-width: 768px) and (max-width: 1199px) {
-    .coluna-title {
-      font-size: 1.8em;
-      padding: 12px 25px;
-    }
-  
-    .coluna-button {
-      width: 275px;
-    }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 767px) {
+  .coluna-title {
+    font-size: 1.5em;
+    padding: 10px 20px;
   }
-  
-  /* Telas pequenas (celulares) */
-  @media (max-width: 767px) {
-    .coluna-title {
-      font-size: 1.5em;
-      padding: 10px 20px;
-    }
-  
-    .coluna-button {
-      width: 100%;
-      max-width: 250px;
-      font-size: 1em;
-      padding: 12px;
-    }
+
+  .coluna-button {
+    width: 100%;
+    max-width: 250px;
+    font-size: 1em;
+    padding: 12px;
   }
-  
+}
