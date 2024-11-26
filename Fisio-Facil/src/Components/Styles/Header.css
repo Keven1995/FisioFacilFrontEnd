@@ -113,9 +113,4 @@
     border-radius: 0.25rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
-
-  .user-dropdown .dropdown-menu.mt-2 {
-    margin-top: 0.3rem !important;
-    right: 25px;
-  }
 }
