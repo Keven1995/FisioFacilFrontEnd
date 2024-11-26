@@ -1,13 +1,14 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Styles/PlanosCategoria.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const PlanoBasico = ({ membroSelecionado }) => {
+const PlanoBasico = () => {
   const navigate = useNavigate();
+  const { membro } = useParams(); // Captura o membro da URL
 
   const handleRedirect = () => {
-    navigate(`/membros/${membroSelecionado}/lista-exercicios?plano=basico`);
+    navigate(`/membros/${membro}/lista-exercicios?plano=basico`);
   };
 
   return (
@@ -29,9 +30,9 @@ const PlanoBasico = ({ membroSelecionado }) => {
       <button
         className="btn btn-primary mt-3"
         onClick={handleRedirect}
-        aria-label={`Ver exercícios do membro ${membroSelecionado}`}
+        aria-label={`Ver exercícios do membro ${membro}`}
       >
-        Ver exercícios e alongamentos para {membroSelecionado}
+        Ver exercícios e alongamentos para {membro}
       </button>
     </div>
   );

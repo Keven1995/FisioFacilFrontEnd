@@ -1,44 +1,45 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/Exercicio.css";
 
-const CervicalListaExercicio = ({ membroSelecionado }) => {
+const CervicalListaExercicio = () => {
   const [showExercises, setShowExercises] = useState(false);
   const [filteredExercises, setFilteredExercises] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
+  const { membro } = useParams(); // Captura o membro da URL
 
   const exercises = [
     {
       title: "Exercício 1: Flexão de Cervical",
       description: "Movimente o pescoço para frente, alongando a cervical.",
       video: "https://via.placeholder.com/150",
-      link: `/membros/${membroSelecionado}/exercicio-flexao-cervical`,
+      link: `/membros/${membro}/exercicio-flexao-cervical`,
     },
     {
       title: "Exercício 2: Extensão de Cervical",
       description: "Movimento para trás do pescoço, promovendo a extensão da cervical.",
       video: "https://via.placeholder.com/150",
-      link: `/membros/${membroSelecionado}/exercicio-extensao-cervical`,
+      link: `/membros/${membro}/exercicio-extensao-cervical`,
     },
     {
       title: "Exercício 3: Rotação de Cervical",
       description: "Rotacione lentamente o pescoço para um lado e depois para o outro.",
       video: "https://via.placeholder.com/150",
-      link: `/membros/${membroSelecionado}/exercicio-rotacao-cervical`,
+      link: `/membros/${membro}/exercicio-rotacao-cervical`,
     },
     {
       title: "Exercício 4: Inclinação Lateral",
       description: "Incline a cabeça lateralmente, como se tentasse tocar o ombro.",
       video: "https://via.placeholder.com/150",
-      link: `/membros/${membroSelecionado}/exercicio-inclinacao-lateral`,
+      link: `/membros/${membro}/exercicio-inclinacao-lateral`,
     },
     {
       title: "Exercício 5: Elevação de Ombros",
       description: "Eleve os ombros para aliviar tensões na cervical.",
       video: "https://via.placeholder.com/150",
-      link: `/membros/${membroSelecionado}/exercicio-elevacao-ombros`,
+      link: `/membros/${membro}/exercicio-elevacao-ombros`,
     },
   ];
 
@@ -65,7 +66,7 @@ const CervicalListaExercicio = ({ membroSelecionado }) => {
 
   return (
     <div className="exercicios-container container">
-      <h2 className="text-center mb-4">{membroSelecionado.toUpperCase()}</h2>
+      <h2 className="text-center mb-4">{membro.toUpperCase()}</h2>
       <div className="d-flex justify-content-center gap-3 mb-3">
         <button
           className="btn btn-primary"
