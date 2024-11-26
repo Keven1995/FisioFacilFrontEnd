@@ -66,7 +66,7 @@ const CervicalListaExercicio = () => {
 
   return (
     <div className="exercicios-container container">
-      <h2 className="text-center mb-4">{membro.toUpperCase()}</h2>
+      <h2 className="text-center mb-4">{membro ? membro.toUpperCase() : "Membro não identificado"}</h2>
       <div className="d-flex justify-content-center gap-3 mb-3">
         <button
           className="btn btn-primary"

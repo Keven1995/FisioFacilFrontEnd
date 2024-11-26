@@ -50,6 +50,7 @@ import MaoExercicio from "./Modules/Exercicios/MembrosSuperiores/MaoExercicio";
 import OmbroExercicio from "./Modules/Exercicios/MembrosSuperiores/OmbroExercicio";
 import CervicalExercicios from "./Modules/ColunaVertebral/View/membros/Cervical/FlexaoCervical";
 import FlexaoCervical from "./Modules/ColunaVertebral/View/membros/Cervical/FlexaoCervical";
+import CervicalListaExercicio from "./Modules/Exercicios/ColunaVertebral/CervicalListaExercicio";
 
 function App() {
   const location = useLocation();
@@ -68,7 +69,6 @@ function App() {
         <Route path="/cadastrar" element={<SignUp />} />
         <Route path="/esqueciaSenha" element={<ForgetPassword />} />
 
-
         <Route path="/servicos" element={<Servicos />} />
         <Route path="/membrosInferiores" element={<MembrosInferiores />} />
         <Route path="/membrosSuperiores" element={<MembrosSuperiores />} />
@@ -78,27 +78,49 @@ function App() {
 
         <Route path="/planos" element={<Planos />} />
         <Route path="/planoBasico/:membro" element={<PlanoBasico />} />
-        <Route path="/planoIntermediario/:membro" element={<PlanoIntermediario />} />
+        <Route
+          path="/planoIntermediario/:membro"
+          element={<PlanoIntermediario />}
+        />
         <Route path="/planoPlus/:membro" element={<PlanoPlus />} />
 
         <Route path="/coluna-vertebral/cervical" element={<Cervical />} />
-        <Route path="membros/cervical/lista-exercicios" element={<CervicalListaExercicios />} />
-        <Route path="/membros/cervical/exercicio-flexao-cervical" element={<FlexaoCervical />} />
+        <Route
+          path="/membros/:membro/lista-exercicios"
+          element={<CervicalListaExercicio />}
+        />
+
+        <Route
+          path="/membros/cervical/exercicio-flexao-cervical"
+          element={<FlexaoCervical />}
+        />
         <Route path="/coluna-vertebral/lombar" element={<Lombar />} />
-        <Route path="/membros/lombar/exercicios" element={<LombarExercicio />} />
+        <Route
+          path="/membros/lombar/exercicios"
+          element={<LombarExercicio />}
+        />
         <Route path="/coluna-vertebral/sacral" element={<Sacral />} />
         <Route path="membros/sacral/exercicios" element={<SacralExercicio />} />
         <Route path="/coluna-vertebral/toracica" element={<Toracica />} />
-        <Route path="membros/toracica/exercicios" element={<ToracicaExercicio />} />
+        <Route
+          path="membros/toracica/exercicios"
+          element={<ToracicaExercicio />}
+        />
 
         <Route path="/membros-inferiores/joelho" element={<Joelho />} />
         <Route path="membros/joelho/exercicios" element={<JoelhoExercicio />} />
         <Route path="/membros-inferiores/pe" element={<Pe />} />
         <Route path="membros/pe/exercicios" element={<PeExercicio />} />
         <Route path="/membros-inferiores/tornozelo" element={<Tornozelo />} />
-        <Route path="membros/tornozelo/exercicios" element={<TornozeloExercicio />} />
+        <Route
+          path="membros/tornozelo/exercicios"
+          element={<TornozeloExercicio />}
+        />
         <Route path="/membros-inferiores/quadril" element={<Quadril />} />
-        <Route path="membros/quadril/exercicios" element={<QuadrilExercicio />} />
+        <Route
+          path="membros/quadril/exercicios"
+          element={<QuadrilExercicio />}
+        />
 
         <Route path="/membros-superiores/punho" element={<Punho />} />
         <Route path="membros/punho/exercicios" element={<PunhoExercicio />} />
@@ -107,7 +129,10 @@ function App() {
         <Route path="/membros-superiores/mao" element={<Mao />} />
         <Route path="membros/mao/exercicios" element={<MaoExercicio />} />
         <Route path="/membros-superiores/cotovelo" element={<Cotovelo />} />
-        <Route path="membros/cotovelo/exercicios" element={<CotoveloExercicio />} />
+        <Route
+          path="membros/cotovelo/exercicios"
+          element={<CotoveloExercicio />}
+        />
       </Routes>
 
       {!isLoginPage && <Footer />}
