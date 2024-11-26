@@ -9,10 +9,17 @@ const ColunaVertebral = () => {
   const { isAuthenticated } = useAuth();
 
   const handleClick = (section) => {
+    const routesMap = {
+      CERVICAL: "coluna-vertebral/cervical",
+      TORACICA: "coluna-vertebral/toracica",
+      LOMBAR: "coluna-vertebral/lombar",
+      SACRAL: "coluna-vertebral/sacral",
+    };
+
     if (isAuthenticated) {
-      navigate(`/${section.toLowerCase()}`);
+      navigate(`/${routesMap[section]}`);
     } else {
-      navigate("/login", { state: { from: `/${section.toLowerCase()}` } });
+      navigate("/login", { state: { from: `/${routesMap[section]}` } });
     }
   };
 
