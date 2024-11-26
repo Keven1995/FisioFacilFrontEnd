@@ -1,8 +1,8 @@
 /* Container principal dos planos */
 .container-planos {
   width: 100%;
-  padding: 151px 30px 71px 30px;
-  margin: 68px auto;
+  padding: 50px 0px 50px 0px;
+  margin: 241px auto 232px;
   max-width: 1200px;
 }
 
@@ -41,7 +41,7 @@
 /* Responsividade para telas médias */
 @media (max-width: 1024px) {
   .container-planos {
-    padding: 120px 15px;
+    padding: 18px 97px;
   }
 
   .planos-title {
@@ -57,7 +57,7 @@
 /* Responsividade para telas pequenas */
 @media (max-width: 768px) {
   .container-planos {
-    padding: 161px 5px;
+    padding: 18px 97px;
   }
 
   .planos-title {
@@ -73,7 +73,7 @@
 /* Responsividade para telas muito pequenas */
 @media (max-width: 480px) {
   .container-planos {
-    padding: 161px 5px;
+    padding: 18px 97px;
   }
 
   .planos-title {
