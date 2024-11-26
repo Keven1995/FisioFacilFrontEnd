@@ -8,6 +8,8 @@ import "../../../App.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // Estado de carregamento
+  const [error, setError] = useState(""); // Estado de erro
   const location = useLocation();
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -15,9 +17,16 @@ const Login = () => {
 
   const apiUrl = import.meta.env.VITE_API_URL || "https://fisiofacil-backend-byeacga0d9a3d7fc.canadacentral-01.azurewebsites.net";
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!email || !password) {
+      setError("Preencha todos os campos.");
+      return;
+    }
+
+    setIsLoading(true);
+    setError("");
 
     fetch(`${apiUrl}/api/usuarios/login`, {
       method: "POST",
@@ -28,20 +37,20 @@ const Login = () => {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error('A resposta da rede não foi ok'); 
+          throw new Error("Credenciais inválidas.");
         }
         return response.json();
       })
       .then((data) => {
-        console.log('Login bem-sucedido:', data);
-        localStorage.setItem('authToken', data.token);
-        localStorage.setItem('userName', data.userName);
+        localStorage.setItem("authToken", data.token);
+        localStorage.setItem("userName", data.userName);
         login(data.token, data.userName);
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.error('Houve um problema com a operação de fetch:', error); 
-      });
+        setError(error.message || "Erro ao realizar login.");
+      })
+      .finally(() => setIsLoading(false));
   };
 
   return (
@@ -64,7 +73,7 @@ const Login = () => {
           />
           <FaLock className="icon" />
         </div>
-
+        {error && <p className="error-message">{error}</p>}
         <div className="recall-forget">
           <label className="label">
             <input type="checkbox" />
@@ -72,8 +81,8 @@ const Login = () => {
           </label>
           <a href="/esqueciaSenha">Esqueceu a senha?</a>
         </div>
-        <button type="submit" className="btn">
-          Login
+        <button type="submit" className="btn" disabled={isLoading}>
+          {isLoading ? "Carregando..." : "Login"}
         </button>
         <div className="signup-link">
           <p className="p">

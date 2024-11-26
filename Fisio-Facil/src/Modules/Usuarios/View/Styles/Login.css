@@ -114,3 +114,15 @@
 .p {
   color: var(--color-primary);
 }
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.btn[disabled] {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
