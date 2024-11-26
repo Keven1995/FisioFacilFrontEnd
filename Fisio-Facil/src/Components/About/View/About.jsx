@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TerapiaHome from "../../../assets/img/terapiaHome.jpg";
 import Choice from "../../../assets/img/choice.jpg";
 import "../../Styles/Sobre.css";
 
 const About = () => {
+  const [isLoaded, setIsLoaded] = useState({
+    terapiaHome: false,
+    choice: false,
+  });
+
+  const handleImageLoad = (key) => {
+    setIsLoaded((prevState) => ({
+      ...prevState,
+      [key]: true,
+    }));
+  };
+
+  const placeholders = {
+    terapiaHome: (
+      <div className="skeleton img-fluid rounded"></div>
+    ),
+    choice: (
+      <div className="skeleton img-fluid rounded"></div>
+    ),
+  };
+
   return (
     <div className="container-sobre">
       <h1 className="text-center mb-4">Sobre o Fisio Fácil</h1>
@@ -40,11 +61,14 @@ const About = () => {
           </p>
         </div>
         <div className="col-md-6 mb-4 text-center">
+          {!isLoaded.terapiaHome && placeholders.terapiaHome}
           <img
             src={TerapiaHome}
             alt="Terapia em casa"
-            className="img-fluid rounded"
+            className={`img-fluid rounded ${isLoaded.terapiaHome ? "" : "d-none"}`}
             style={{ maxWidth: "100%", height: "auto" }}
+            loading="lazy"
+            onLoad={() => handleImageLoad("terapiaHome")}
           />
         </div>
       </div>
@@ -52,11 +76,14 @@ const About = () => {
       <div className="row align-items-center mt-5">
         {/* Imagem 2 */}
         <div className="col-md-6 mb-4 text-center">
+          {!isLoaded.choice && placeholders.choice}
           <img
             src={Choice}
             alt="Planos de terapia"
-            className="img-fluid rounded"
+            className={`img-fluid rounded ${isLoaded.choice ? "" : "d-none"}`}
             style={{ maxWidth: "100%", height: "auto" }}
+            loading="lazy"
+            onLoad={() => handleImageLoad("choice")}
           />
         </div>
         {/* Seção 2 */}

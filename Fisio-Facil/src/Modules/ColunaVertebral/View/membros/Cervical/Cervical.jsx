@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/Membro.css";
 import Cervicalimg from "../img/cervical.jpg";
 
 const Cervical = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const handleClick = (path) => {
     window.location.href = path;
+  };
+
+  const handleImageLoad = () => {
+    setIsLoaded(true);
   };
 
   return (
     <div className="member-page-container">
       <h1 className="category-title">COLUNA VERTEBRAL</h1>
       <h2 className="member-subtitle">Cervical</h2>
+
       <div className="membro-card">
-        <img src={Cervicalimg} alt="Cervical" className="membro-image" />
+        {!isLoaded && <div className="skeleton membro-image"></div>}
+        <img
+          src={Cervicalimg}
+          alt="Cervical"
+          className={`membro-image ${isLoaded ? "" : "d-none"}`}
+          loading="lazy"
+          onLoad={handleImageLoad}
+        />
       </div>
 
       <div className="member-card card shadow">
