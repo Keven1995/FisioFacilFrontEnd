@@ -7,6 +7,8 @@ const SignUp = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [message, setMessage] = useState(null); // Mensagem de feedback
+  const [messageType, setMessageType] = useState(""); // Tipo de mensagem: success ou error
 
   const apiUrl =
     import.meta.env.VITE_API_URL ||
@@ -15,18 +17,31 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validação das senhas
-    if (password !== confirmPassword) {
-      alert("As senhas não coincidem!");
+    // Limpar mensagens anteriores
+    setMessage(null);
+
+    // Validação dos campos obrigatórios
+    if (!email || !userName || !password || !confirmPassword) {
+      setMessage("Por favor, preencha todos os campos!");
+      setMessageType("error");
       return;
     }
 
     // Validação do e-mail
     if (!email.includes("@")) {
-      alert("Por favor, insira um e-mail válido!");
+      setMessage("Por favor, insira um e-mail válido!");
+      setMessageType("error");
       return;
     }
 
+    // Validação das senhas
+    if (password !== confirmPassword) {
+      setMessage("As senhas não coincidem!");
+      setMessageType("error");
+      return;
+    }
+
+    // Enviar dados para a API
     fetch(`${apiUrl}/api/usuarios/signup`, {
       method: "POST",
       headers: {
@@ -41,14 +56,18 @@ const SignUp = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
-        alert("Cadastro realizado com sucesso!");
-        // Redirecionar para a página de login
-        window.location.href = "https://fisio-facil-front-end.vercel.app/login";
+        setMessage("Cadastro realizado com sucesso!");
+        setMessageType("success");
+        // Redirecionar para a página de login após 2 segundos
+        setTimeout(() => {
+          window.location.href =
+            "https://fisio-facil-front-end.vercel.app/login";
+        }, 2000);
       })
       .catch((error) => {
         console.error(error);
-        alert("Erro ao cadastrar, tente novamente!");
+        setMessage("Erro ao cadastrar, tente novamente!");
+        setMessageType("error");
       });
   };
 
@@ -57,6 +76,13 @@ const SignUp = () => {
       <div className="cadastrar-container">
         <form onSubmit={handleSubmit}>
           <h1>FisioFácil</h1>
+
+          {message && (
+            <div className={`message ${messageType}`}>
+              {message}
+            </div>
+          )}
+
           <div className="input-field">
             <input
               type="email"
