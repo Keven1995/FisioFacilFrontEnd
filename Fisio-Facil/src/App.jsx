@@ -51,6 +51,7 @@ import OmbroExercicio from "./Modules/Exercicios/MembrosSuperiores/OmbroExercici
 import CervicalExercicios from "./Modules/ColunaVertebral/View/membros/Cervical/FlexaoCervical";
 import FlexaoCervical from "./Modules/ColunaVertebral/View/membros/Cervical/FlexaoCervical";
 import CervicalListaExercicio from "./Modules/Exercicios/ColunaVertebral/CervicalListaExercicio";
+import ResetPassword from "./Modules/Usuarios/View/ResetPassword";
 
 function App() {
   const location = useLocation();
@@ -68,6 +69,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cadastrar" element={<SignUp />} />
         <Route path="/esqueciaSenha" element={<ForgetPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+
 
         <Route path="/servicos" element={<Servicos />} />
         <Route path="/membrosInferiores" element={<MembrosInferiores />} />
