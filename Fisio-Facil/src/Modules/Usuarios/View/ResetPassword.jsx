@@ -12,7 +12,7 @@ const ResetPassword = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const apiUrl =
-    import.meta.env.VITE_API_URL || "https://fisiofacil-backend-url";
+    import.meta.env.VITE_API_URL || "https://fisiofacil-backend-byeacga0d9a3d7fc.canadacentral-01.azurewebsites.net";
 
   const validatePassword = (password) => {
     return (

@@ -10,9 +10,7 @@ const SignUp = () => {
   const [message, setMessage] = useState(null); // Mensagem de feedback
   const [messageType, setMessageType] = useState(""); // Tipo de mensagem: success ou error
 
-  const apiUrl =
-    import.meta.env.VITE_API_URL ||
-    "https://fisiofacil-backend-byeacga0d9a3d7fc.canadacentral-01.azurewebsites.net";
+  const apiUrl = import.meta.env.VITE_API_URL || "https://fisiofacil-backend-byeacga0d9a3d7fc.canadacentral-01.azurewebsites.net";
 
   const handleSubmit = (e) => {
     e.preventDefault();
