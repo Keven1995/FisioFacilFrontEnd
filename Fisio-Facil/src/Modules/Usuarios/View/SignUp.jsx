@@ -1,8 +1,8 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUser, FaLock } from "react-icons/fa";
 import { ROUTES } from "../../../constants/routes.js";
-import { API_BASE_URL } from "../../../config/api.js";
+import { apiFetch } from "../../../config/httpClient.js";
 import "../View/Styles/SignUp.css";
 
 const SignUp = () => {
@@ -14,8 +14,8 @@ const SignUp = () => {
   const [messageType, setMessageType] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setMessage(null);
 
     if (!email || !userName || !password || !confirmPassword) {
@@ -25,49 +25,44 @@ const SignUp = () => {
     }
 
     if (!email.includes("@")) {
-      setMessage("Por favor, insira um e-mail válido!");
+      setMessage("Por favor, insira um e-mail valido!");
       setMessageType("error");
       return;
     }
 
     if (password !== confirmPassword) {
-      setMessage("As senhas não coincidem!");
+      setMessage("As senhas nao coincidem!");
       setMessageType("error");
       return;
     }
 
-    fetch(`${API_BASE_URL}/usuarios/signup`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, nomeUsuario: userName, senha: password }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Erro no cadastro");
-        }
-        return response.json();
-      })
-      .then(() => {
-        setMessage("Cadastro realizado com sucesso!");
-        setMessageType("success");
-        setTimeout(() => {
-          navigate(ROUTES.LOGIN);
-        }, 2000);
-      })
-      .catch((requestError) => {
-        console.error(requestError);
-        setMessage("Erro ao cadastrar, tente novamente!");
-        setMessageType("error");
+    try {
+      const response = await apiFetch("/usuarios/signup", {
+        method: "POST",
+        body: { email, nomeUsuario: userName, senha: password },
       });
+
+      if (!response.ok) {
+        throw new Error("Erro no cadastro");
+      }
+
+      setMessage("Cadastro realizado com sucesso!");
+      setMessageType("success");
+      setTimeout(() => {
+        navigate(ROUTES.LOGIN);
+      }, 2000);
+    } catch (requestError) {
+      console.error(requestError);
+      setMessage("Erro ao cadastrar, tente novamente!");
+      setMessageType("error");
+    }
   };
 
   return (
     <div className="page-wrapper">
       <div className="cadastrar-container">
         <form onSubmit={handleSubmit}>
-          <h1>FisioFácil</h1>
+          <h1>FisioFacil</h1>
 
           {message && <div className={`message ${messageType}`}>{message}</div>}
 
@@ -76,7 +71,7 @@ const SignUp = () => {
               type="email"
               placeholder="E-mail"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(event) => setEmail(event.target.value)}
               required
             />
             <FaUser className="icon" />
@@ -84,9 +79,9 @@ const SignUp = () => {
           <div className="input-field">
             <input
               type="text"
-              placeholder="Nome de usuário"
+              placeholder="Nome de usuario"
               value={userName}
-              onChange={(e) => setUserName(e.target.value)}
+              onChange={(event) => setUserName(event.target.value)}
               required
             />
             <FaUser className="icon" />
@@ -96,7 +91,7 @@ const SignUp = () => {
               type="password"
               placeholder="Senha"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(event) => setPassword(event.target.value)}
               required
             />
             <FaLock className="icon" />
@@ -106,7 +101,7 @@ const SignUp = () => {
               type="password"
               placeholder="Confirmar Senha"
               value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              onChange={(event) => setConfirmPassword(event.target.value)}
               required
             />
             <FaLock className="icon" />

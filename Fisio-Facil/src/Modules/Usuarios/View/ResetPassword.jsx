@@ -1,6 +1,6 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { API_BASE_URL } from "../../../config/api.js";
+import { apiFetch } from "../../../config/httpClient.js";
 import "../View/Styles/ForgetPassword.css";
 
 const ResetPassword = () => {
@@ -13,36 +13,32 @@ const ResetPassword = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validatePassword = (password) => {
-    return (
-      password.length >= 8 &&
-      /\d/.test(password) &&
-      /[!@#$%^&*]/.test(password)
-    );
+    return password.length >= 8 && /\d/.test(password) && /[!@#$%^&*]/.test(password);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setMessage(null);
 
     if (novaSenha !== confirmarSenha) {
-      setMessage({ type: "error", text: "As senhas não coincidem" });
+      setMessage({ type: "error", text: "As senhas nao coincidem" });
       return;
     }
 
     if (!validatePassword(novaSenha)) {
       setMessage({
         type: "error",
-        text: "A senha deve ter pelo menos 8 caracteres, um número e um símbolo.",
+        text: "A senha deve ter pelo menos 8 caracteres, um numero e um simbolo.",
       });
       return;
     }
 
     setIsSubmitting(true);
+
     try {
-      const response = await fetch(`${API_BASE_URL}/usuarios/redefinir-senha`, {
+      const response = await apiFetch("/usuarios/redefinir-senha", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token, novaSenha }),
+        body: { token, novaSenha },
       });
 
       if (!response.ok) {
@@ -64,15 +60,13 @@ const ResetPassword = () => {
     <div className="page-wrapper">
       <form onSubmit={handleSubmit}>
         <h1>Redefinir Senha</h1>
-        {message && (
-          <div className={`message ${message.type}`}>{message.text}</div>
-        )}
+        {message && <div className={`message ${message.type}`}>{message.text}</div>}
         <div className="input-field">
           <input
             type="password"
             placeholder="Nova senha"
             value={novaSenha}
-            onChange={(e) => setNovaSenha(e.target.value)}
+            onChange={(event) => setNovaSenha(event.target.value)}
             required
           />
         </div>
@@ -81,7 +75,7 @@ const ResetPassword = () => {
             type="password"
             placeholder="Confirmar nova senha"
             value={confirmarSenha}
-            onChange={(e) => setConfirmarSenha(e.target.value)}
+            onChange={(event) => setConfirmarSenha(event.target.value)}
             required
           />
         </div>

@@ -1,11 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { AUTH_STORAGE_KEYS } from "../config/api.js";
 
 const AuthContext = createContext();
-
-const AUTH_STORAGE_KEYS = Object.freeze({
-  TOKEN: "authToken",
-  USER_NAME: "userName",
-});
 
 export const useAuth = () => useContext(AuthContext);
 
@@ -44,4 +40,3 @@ export const AuthProvider = ({ children }) => {
 
   return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;
 };
-
