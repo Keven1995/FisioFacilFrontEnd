@@ -30,19 +30,19 @@ const Quadril = () => {
           <div className="plan-buttons">
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoBasico/:membro")}
+              onClick={() => handleClick("/planoBasico/quadril")}
             >
               Básico
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoIntermediario/:membro")}
+              onClick={() => handleClick("/planoIntermediario/quadril")}
             >
               Intermediário
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoPlus/:membro")}
+              onClick={() => handleClick("/planoPlus/quadril")}
             >
               Plus
             </button>
@@ -54,4 +54,5 @@ const Quadril = () => {
 };
 
 export default Quadril;
+
 

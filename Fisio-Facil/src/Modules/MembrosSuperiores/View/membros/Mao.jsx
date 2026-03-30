@@ -27,9 +27,9 @@ const Mao = () => {
           </p>
 
           <div className="plan-buttons">
-            <button className="btn btn-outline-success" onClick={() => handleClick("/planoBasico/:membro")}>Básico</button>
-            <button className="btn btn-outline-success" onClick={() => handleClick("/planoIntermediario/:membro")}>Intermediário</button>
-            <button className="btn btn-outline-success" onClick={() => handleClick("/planoPlus/:membro")}>Plus</button>
+            <button className="btn btn-outline-success" onClick={() => handleClick("/planoBasico/mao")}>Básico</button>
+            <button className="btn btn-outline-success" onClick={() => handleClick("/planoIntermediario/mao")}>Intermediário</button>
+            <button className="btn btn-outline-success" onClick={() => handleClick("/planoPlus/mao")}>Plus</button>
           </div>
         </div>
       </div>
@@ -38,4 +38,5 @@ const Mao = () => {
 };
 
 export default Mao;
+
 

@@ -30,19 +30,19 @@ const Ombro = () => {
           <div className="plan-buttons">
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoBasico/:membro")}
+              onClick={() => handleClick("/planoBasico/ombro")}
             >
               Básico
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoIntermediario/:membro")}
+              onClick={() => handleClick("/planoIntermediario/ombro")}
             >
               Intermediário
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoPlus/:membro")}
+              onClick={() => handleClick("/planoPlus/ombro")}
             >
               Plus
             </button>
@@ -54,4 +54,5 @@ const Ombro = () => {
 };
 
 export default Ombro;
+
 

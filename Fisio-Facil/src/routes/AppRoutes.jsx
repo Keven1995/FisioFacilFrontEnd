@@ -40,6 +40,7 @@ import Mao from "../Modules/MembrosSuperiores/View/membros/Mao";
 import MaoExercicio from "../Modules/Exercicios/MembrosSuperiores/MaoExercicio";
 import Cotovelo from "../Modules/MembrosSuperiores/View/membros/Cotovelo";
 import CotoveloExercicio from "../Modules/Exercicios/MembrosSuperiores/CotoveloExercicio";
+import MinhaAssinatura from "../Modules/Assinatura/View/MinhaAssinatura";
 
 const AppRoutes = () => (
   <Routes>
@@ -48,6 +49,7 @@ const AppRoutes = () => (
     <Route path={ROUTES.CADASTRAR} element={<SignUp />} />
     <Route path={ROUTES.ESQUECI_SENHA} element={<ForgetPassword />} />
     <Route path={ROUTES.RESET_PASSWORD} element={<ResetPassword />} />
+    <Route path={ROUTES.MINHA_ASSINATURA} element={<MinhaAssinatura />} />
 
     <Route path="/servicos" element={<Servicos />} />
     <Route path="/membrosInferiores" element={<MembrosInferiores />} />

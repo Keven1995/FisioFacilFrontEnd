@@ -30,19 +30,19 @@ const Pe = () => {
           <div className="plan-buttons">
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoBasico/:membro")}
+              onClick={() => handleClick("/planoBasico/pe")}
             >
               Básico
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoIntermediario/:membro")}
+              onClick={() => handleClick("/planoIntermediario/pe")}
             >
               Intermediário
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoPlus/:membro")}
+              onClick={() => handleClick("/planoPlus/pe")}
             >
               Plus
             </button>
@@ -54,4 +54,5 @@ const Pe = () => {
 };
 
 export default Pe;
+
 

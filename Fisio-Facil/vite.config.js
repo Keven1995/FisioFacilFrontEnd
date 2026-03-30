@@ -5,8 +5,9 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   const apiBaseUrl = env.VITE_API_URL;
   const apiProxyTarget = env.VITE_API_PROXY_TARGET || "http://localhost:8080";
+  const isTestMode = mode === "test";
 
-  if (!apiBaseUrl) {
+  if (!apiBaseUrl && !isTestMode) {
     throw new Error(
       `VITE_API_URL nao definida para o modo "${mode}". Configure em .env.${mode}.`,
     );
@@ -29,5 +30,11 @@ export default defineConfig(({ mode }) => {
       },
     },
     base: "/",
+    test: {
+      environment: "jsdom",
+      setupFiles: "./src/test/setupTests.js",
+      globals: true,
+      css: true,
+    },
   };
 });

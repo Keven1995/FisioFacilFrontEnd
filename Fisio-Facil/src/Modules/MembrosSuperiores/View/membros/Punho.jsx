@@ -29,19 +29,19 @@ const Punho = () => {
           <div className="plan-buttons">
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoBasico/:membro")}
+              onClick={() => handleClick("/planoBasico/punho")}
             >
               Básico
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoIntermediario/:membro")}
+              onClick={() => handleClick("/planoIntermediario/punho")}
             >
               Intermediário
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoPlus/:membro")}
+              onClick={() => handleClick("/planoPlus/punho")}
             >
               Plus
             </button>
@@ -53,4 +53,5 @@ const Punho = () => {
 };
 
 export default Punho;
+
 

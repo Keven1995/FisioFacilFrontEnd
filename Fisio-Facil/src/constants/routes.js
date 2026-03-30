@@ -5,6 +5,7 @@ export const ROUTES = {
   ESQUECI_SENHA: "/esqueciaSenha",
   RESET_PASSWORD: "/reset-password",
   COLUNA_VERTEBRAL: "/colunaVertebral",
+  MINHA_ASSINATURA: "/minha-assinatura",
 };
 
 export const LAYOUT_HIDDEN_ROUTES = [

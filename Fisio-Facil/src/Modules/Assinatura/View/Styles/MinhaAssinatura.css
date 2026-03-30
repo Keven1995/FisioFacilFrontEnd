@@ -1,0 +1,212 @@
+.assinatura-page {
+  width: 100%;
+  min-height: calc(100dvh - 120px);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(36, 194, 110, 0.1), transparent 36%),
+    linear-gradient(180deg, #f3f8f4 0%, #e8f2ea 100%);
+  padding: clamp(152px, 20vh, 178px) 16px 56px;
+}
+
+.assinatura-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+}
+
+.assinatura-header {
+  background: #ffffff;
+  border: 1px solid #d8e7dc;
+  box-shadow: 0 12px 28px rgba(22, 45, 59, 0.08);
+  border-radius: 18px;
+  padding: 20px 22px;
+}
+
+.assinatura-header h1 {
+  margin: 0 0 6px;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: #17324d;
+  line-height: 1.15;
+}
+
+.assinatura-header p {
+  margin: 0;
+  color: #4a6070;
+  font-size: 1.02rem;
+}
+
+.assinatura-error {
+  margin: 0;
+  color: #a12626;
+  background: #ffe8e8;
+  border: 1px solid #ffcfcf;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.assinatura-summary-card,
+.assinatura-list-card,
+.assinatura-empty-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #dbe8df;
+  box-shadow: 0 12px 26px rgba(22, 45, 59, 0.08);
+}
+
+.assinatura-summary-card {
+  padding: 24px;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: center;
+}
+
+.assinatura-summary-card h2 {
+  margin: 0 0 8px;
+  color: #17324d;
+}
+
+.assinatura-summary-card p {
+  margin: 4px 0;
+  color: #334d61;
+}
+
+.assinatura-progress {
+  display: grid;
+  gap: 8px;
+}
+
+.assinatura-progress span {
+  font-weight: 700;
+  color: #145032;
+}
+
+.assinatura-progress small {
+  color: #4e6572;
+}
+
+.assinatura-progress-track {
+  width: 100%;
+  height: 11px;
+  background: #dbe8df;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.assinatura-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #21bf73 0%, #149f5a 100%);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.assinatura-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.assinatura-list-card {
+  padding: 22px;
+}
+
+.assinatura-list-card h3 {
+  margin: 0 0 14px;
+  color: #17324d;
+  font-size: 1.1rem;
+}
+
+.assinatura-list-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.assinatura-list-card li {
+  background: #f7faf8;
+  border: 1px solid #e2ece5;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.assinatura-list-card span {
+  color: #233d4a;
+}
+
+.assinatura-list-card a,
+.assinatura-list-card button,
+.assinatura-link-button {
+  border: 0;
+  border-radius: 10px;
+  background: #19b767;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.assinatura-list-card a:hover,
+.assinatura-list-card button:hover,
+.assinatura-link-button:hover {
+  background: #129953;
+  transform: translateY(-1px);
+}
+
+.assinatura-list-card button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
+
+.assinatura-empty-card {
+  padding: 26px;
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+.assinatura-empty-card h2 {
+  margin: 0;
+  color: #17324d;
+}
+
+.assinatura-empty-card p,
+.assinatura-muted {
+  margin: 0;
+  color: #4e6572;
+}
+
+@media (max-width: 900px) {
+  .assinatura-page {
+    padding-top: 138px;
+  }
+
+  .assinatura-header {
+    padding: 18px 16px;
+  }
+
+  .assinatura-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .assinatura-list-card li {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .assinatura-list-card a,
+  .assinatura-list-card button,
+  .assinatura-link-button {
+    width: 100%;
+    text-align: center;
+  }
+}

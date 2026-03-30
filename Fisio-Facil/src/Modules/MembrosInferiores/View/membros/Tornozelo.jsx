@@ -30,19 +30,19 @@ const Tornozelo = () => {
           <div className="plan-buttons">
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoBasico/:membro")}
+              onClick={() => handleClick("/planoBasico/tornozelo")}
             >
               Básico
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoIntermediario/:membro")}
+              onClick={() => handleClick("/planoIntermediario/tornozelo")}
             >
               Intermediário
             </button>
             <button
               className="btn btn-outline-success"
-              onClick={() => handleClick("/planoPlus/:membro")}
+              onClick={() => handleClick("/planoPlus/tornozelo")}
             >
               Plus
             </button>
@@ -54,4 +54,5 @@ const Tornozelo = () => {
 };
 
 export default Tornozelo;
+
 

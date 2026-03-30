@@ -82,6 +82,17 @@ const Header = () => {
 
               {isUserMenuOpen && (
                 <div className="user-menu" role="menu">
+                  <button
+                    type="button"
+                    className="user-menu-item"
+                    onClick={() => {
+                      setIsUserMenuOpen(false);
+                      navigate(ROUTES.MINHA_ASSINATURA);
+                    }}
+                    role="menuitem"
+                  >
+                    Minha assinatura
+                  </button>
                   <button type="button" className="user-menu-item" onClick={handleLogout} role="menuitem">
                     Sair
                   </button>
