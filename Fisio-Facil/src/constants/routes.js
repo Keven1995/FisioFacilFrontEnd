@@ -7,3 +7,8 @@ export const ROUTES = {
   COLUNA_VERTEBRAL: "/colunaVertebral",
 };
 
+export const LAYOUT_HIDDEN_ROUTES = [
+  ROUTES.LOGIN,
+  ROUTES.CADASTRAR,
+  ROUTES.ESQUECI_SENHA,
+];
