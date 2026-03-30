@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/Membro.css";
 import Sacralimg from "../img/sacral.jpg";
@@ -55,3 +54,4 @@ const Sacral = () => {
 };
 
 export default Sacral;
+

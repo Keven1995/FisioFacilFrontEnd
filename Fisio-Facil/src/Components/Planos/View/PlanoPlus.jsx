@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../Planos/View/Styles/PlanosCategoria.css";
 import { useNavigate } from "react-router-dom";
@@ -35,3 +34,4 @@ const PlanoPlus = ({ membroSelecionado }) => {
 };
 
 export default PlanoPlus;
+

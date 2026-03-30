@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../../ColunaVertebral/View/membros/Styles/Membro.css";
 import Punhoimg from "../../View/img/punho.jpeg";
@@ -54,3 +53,4 @@ const Punho = () => {
 };
 
 export default Punho;
+

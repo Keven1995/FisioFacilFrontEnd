@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import "../../Styles/Servicos.css";
@@ -104,3 +104,4 @@ const Servicos = () => {
 };
 
 export default Servicos;
+

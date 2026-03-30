@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../../ColunaVertebral/View/membros/Styles/Membro.css";
 import Maoimg from "../../View/img/mao.jpeg";
@@ -39,3 +38,4 @@ const Mao = () => {
 };
 
 export default Mao;
+

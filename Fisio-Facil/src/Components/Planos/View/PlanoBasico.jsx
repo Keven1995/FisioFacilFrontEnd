@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Styles/PlanosCategoria.css";
 import { useNavigate, useParams } from "react-router-dom";

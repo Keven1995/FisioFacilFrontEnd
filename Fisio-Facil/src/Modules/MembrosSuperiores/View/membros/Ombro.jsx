@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../../ColunaVertebral/View/membros/Styles/Membro.css";
 import Ombroimg from "../../View/img/ombro.jpeg";
@@ -55,3 +54,4 @@ const Ombro = () => {
 };
 
 export default Ombro;
+

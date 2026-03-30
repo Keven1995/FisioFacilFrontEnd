@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/Membro.css";
 import Lombarimg from "../img/lombar.jpg";
@@ -56,3 +55,4 @@ const Lombar = () => {
 };
 
 export default Lombar;
+

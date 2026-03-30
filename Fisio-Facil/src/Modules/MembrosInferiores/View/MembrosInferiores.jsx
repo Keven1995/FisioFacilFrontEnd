@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import "../../Styles/Inferiores.css";
@@ -35,3 +34,4 @@ const MembrosInferiores = () => {
 };
 
 export default MembrosInferiores;
+

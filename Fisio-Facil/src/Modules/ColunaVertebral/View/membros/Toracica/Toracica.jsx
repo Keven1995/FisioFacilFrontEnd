@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/Membro.css";
 import Toracicaimg from "../img/toracica.jpg";
@@ -52,3 +51,4 @@ const Toracica = () => {
 };
 
 export default Toracica;
+

@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../../ColunaVertebral/View/membros/Styles/Membro.css";
 import Peimg from "../membros/img/pe.jpeg";
@@ -55,3 +54,4 @@ const Pe = () => {
 };
 
 export default Pe;
+

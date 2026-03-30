@@ -1,4 +1,3 @@
-import React from "react";
 import { FaInstagram, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../Styles/Contato.css";
@@ -42,3 +41,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
