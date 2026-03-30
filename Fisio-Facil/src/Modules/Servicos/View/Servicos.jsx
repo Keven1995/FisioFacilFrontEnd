@@ -1,107 +1,86 @@
-import { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+﻿import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../../Styles/Servicos.css";
 import colunaVertebralImg from "../../../assets/img/colunaVertebral.jpg";
-import Inferiores from "../../../assets/img/inferiores.jpg";
-import Superiores from "../../../assets/img/superiores.jpg";
+import inferioresImg from "../../../assets/img/inferiores.jpg";
+import superioresImg from "../../../assets/img/superiores.jpg";
+
+const serviceItems = [
+  {
+    id: "superiores",
+    title: "MEMBROS SUPERIORES",
+    image: superioresImg,
+    alt: "Tratamento para membros superiores",
+    path: "/MembrosSuperiores",
+  },
+  {
+    id: "colunaVertebral",
+    title: "COLUNA VERTEBRAL",
+    image: colunaVertebralImg,
+    alt: "Tratamento para coluna vertebral",
+    path: "/ColunaVertebral",
+  },
+  {
+    id: "inferiores",
+    title: "MEMBROS INFERIORES",
+    image: inferioresImg,
+    alt: "Tratamento para membros inferiores",
+    path: "/MembrosInferiores",
+  },
+];
 
 const Servicos = () => {
   const navigate = useNavigate();
-  const [isLoaded, setIsLoaded] = useState({
+  const [loadedImages, setLoadedImages] = useState({
     superiores: false,
     colunaVertebral: false,
     inferiores: false,
   });
 
-  const handleClick = (path) => {
-    navigate(path);
-  };
-
   const handleImageLoad = (key) => {
-    setIsLoaded((prevState) => ({
-      ...prevState,
+    setLoadedImages((previousState) => ({
+      ...previousState,
       [key]: true,
     }));
   };
 
-  const placeholders = {
-    superiores: (
-      <div className="skeleton service-card-img"></div>
-    ),
-    colunaVertebral: (
-      <div className="skeleton service-card-img"></div>
-    ),
-    inferiores: (
-      <div className="skeleton service-card-img"></div>
-    ),
-  };
-
   return (
-    <div className="container-servicos text-center mt-5">
-      <h1 className="servicos-title">Nossos Serviços</h1>
+    <section className="servicos-page" aria-labelledby="servicos-title">
+      <div className="container-servicos">
+        <h1 id="servicos-title" className="servicos-title text-center">
+          Nossos Servicos
+        </h1>
 
-      <div className="row justify-content-center">
-        <div className="col-lg-4 col-md-6 mb-4">
-          <div
-            className="service-card"
-            onClick={() => handleClick("/MembrosSuperiores")}
-          >
-            {!isLoaded.superiores && placeholders.superiores}
-            <img
-              src={Superiores}
-              alt="Membros Superiores"
-              className={`service-card-img ${isLoaded.superiores ? "" : "d-none"}`}
-              loading="lazy"
-              onLoad={() => handleImageLoad("superiores")}
-            />
-            <div className="card-body">
-              <h5 className="service-card-title">MEMBROS SUPERIORES</h5>
-            </div>
-          </div>
-        </div>
+        <div className="row g-4 justify-content-center">
+          {serviceItems.map((service) => (
+            <div key={service.id} className="col-lg-4 col-md-6 d-flex">
+              <button
+                type="button"
+                className="service-card"
+                onClick={() => navigate(service.path)}
+                aria-label={`Abrir categoria ${service.title}`}
+              >
+                {!loadedImages[service.id] && (
+                  <div className="skeleton service-card-img" aria-hidden="true" />
+                )}
 
-        <div className="col-lg-4 col-md-6 mb-4">
-          <div
-            className="service-card"
-            onClick={() => handleClick("/ColunaVertebral")}
-          >
-            {!isLoaded.colunaVertebral && placeholders.colunaVertebral}
-            <img
-              src={colunaVertebralImg}
-              alt="Coluna Vertebral"
-              className={`service-card-img ${isLoaded.colunaVertebral ? "" : "d-none"}`}
-              loading="lazy"
-              onLoad={() => handleImageLoad("colunaVertebral")}
-            />
-            <div className="card-body">
-              <h5 className="service-card-title">COLUNA VERTEBRAL</h5>
-            </div>
-          </div>
-        </div>
+                <img
+                  src={service.image}
+                  alt={service.alt}
+                  className={`service-card-img ${loadedImages[service.id] ? "" : "d-none"}`}
+                  loading="lazy"
+                  onLoad={() => handleImageLoad(service.id)}
+                />
 
-        <div className="col-lg-4 col-md-6 mb-4">
-          <div
-            className="service-card"
-            onClick={() => handleClick("/MembrosInferiores")}
-          >
-            {!isLoaded.inferiores && placeholders.inferiores}
-            <img
-              src={Inferiores}
-              alt="Membros Inferiores"
-              className={`service-card-img ${isLoaded.inferiores ? "" : "d-none"}`}
-              loading="lazy"
-              onLoad={() => handleImageLoad("inferiores")}
-            />
-            <div className="card-body">
-              <h5 className="service-card-title">MEMBROS INFERIORES</h5>
+                <span className="service-card-title">{service.title}</span>
+              </button>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default Servicos;
-

@@ -1,4 +1,4 @@
-import "./App.css";
+﻿import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
@@ -14,7 +14,9 @@ const AppShell = () => {
   return (
     <div className="App">
       {shouldShowLayout && <Header />}
-      <AppRoutes />
+      <main className="app-main">
+        <AppRoutes />
+      </main>
       {shouldShowLayout && <Footer />}
     </div>
   );
