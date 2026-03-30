@@ -2,29 +2,35 @@
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../Styles/Servicos.css";
-import colunaVertebralImg from "../../../assets/img/colunaVertebral.jpg";
-import inferioresImg from "../../../assets/img/inferiores.jpg";
-import superioresImg from "../../../assets/img/superiores.jpg";
+import colunaVertebralDesktopImg from "../../../assets/img/optimized/colunaVertebral-desktop.jpg";
+import colunaVertebralMobileImg from "../../../assets/img/optimized/colunaVertebral-mobile.jpg";
+import inferioresDesktopImg from "../../../assets/img/optimized/inferiores-desktop.jpg";
+import inferioresMobileImg from "../../../assets/img/optimized/inferiores-mobile.jpg";
+import superioresDesktopImg from "../../../assets/img/optimized/superiores-desktop.jpg";
+import superioresMobileImg from "../../../assets/img/optimized/superiores-mobile.jpg";
 
 const serviceItems = [
   {
     id: "superiores",
     title: "MEMBROS SUPERIORES",
-    image: superioresImg,
+    image: superioresDesktopImg,
+    srcSet: `${superioresMobileImg} 640w, ${superioresDesktopImg} 1200w`,
     alt: "Tratamento para membros superiores",
     path: "/MembrosSuperiores",
   },
   {
     id: "colunaVertebral",
     title: "COLUNA VERTEBRAL",
-    image: colunaVertebralImg,
+    image: colunaVertebralDesktopImg,
+    srcSet: `${colunaVertebralMobileImg} 640w, ${colunaVertebralDesktopImg} 1200w`,
     alt: "Tratamento para coluna vertebral",
     path: "/ColunaVertebral",
   },
   {
     id: "inferiores",
     title: "MEMBROS INFERIORES",
-    image: inferioresImg,
+    image: inferioresDesktopImg,
+    srcSet: `${inferioresMobileImg} 640w, ${inferioresDesktopImg} 1200w`,
     alt: "Tratamento para membros inferiores",
     path: "/MembrosInferiores",
   },
@@ -67,9 +73,12 @@ const Servicos = () => {
 
                 <img
                   src={service.image}
+                  srcSet={service.srcSet}
+                  sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 32vw"
                   alt={service.alt}
                   className={`service-card-img ${loadedImages[service.id] ? "" : "d-none"}`}
-                  loading="lazy"
+                  loading={service.id === "superiores" ? "eager" : "lazy"}
+                  fetchPriority={service.id === "superiores" ? "high" : "auto"}
                   onLoad={() => handleImageLoad(service.id)}
                 />
 
