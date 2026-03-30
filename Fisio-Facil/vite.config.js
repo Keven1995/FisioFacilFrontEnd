@@ -17,8 +17,9 @@ export default defineConfig(({ mode }) => {
       outDir: "dist",
     },
     server: {
-      open: true,
+      host: "0.0.0.0",
       port: 3000,
+      open: false,
       proxy: {
         "/api": {
           target: apiTarget,
@@ -27,6 +28,6 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-    base: "/", // Base deve ser "/" para producao
+    base: "/",
   };
 });
