@@ -3,9 +3,10 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
-  const apiTarget = env.VITE_API_URL;
+  const apiBaseUrl = env.VITE_API_URL;
+  const apiProxyTarget = env.VITE_API_PROXY_TARGET || "http://localhost:8080";
 
-  if (!apiTarget) {
+  if (!apiBaseUrl) {
     throw new Error(
       `VITE_API_URL nao definida para o modo "${mode}". Configure em .env.${mode}.`,
     );
@@ -22,7 +23,7 @@ export default defineConfig(({ mode }) => {
       open: false,
       proxy: {
         "/api": {
-          target: apiTarget,
+          target: apiProxyTarget,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ""),
         },

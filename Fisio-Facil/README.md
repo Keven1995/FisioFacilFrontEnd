@@ -8,7 +8,8 @@ Arquivos:
 - `.env.development`: usado no `npm run dev`
 - `.env.production`: usado no `npm run build`
 Variavel obrigatoria:
-- `VITE_API_URL`: URL base do backend
+- `VITE_API_URL`: base usada pelo frontend (recomendado `/api` no desenvolvimento)
+- `VITE_API_PROXY_TARGET`: alvo real do proxy do Vite (ex.: `http://localhost:8080` ou `http://backend:8080`)
 
 ## Scripts
 
