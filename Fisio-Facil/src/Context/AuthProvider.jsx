@@ -1,6 +1,11 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const AuthContext = createContext();
+
+const AUTH_STORAGE_KEYS = Object.freeze({
+  TOKEN: "authToken",
+  USER_NAME: "userName",
+});
 
 export const useAuth = () => useContext(AuthContext);
 
@@ -9,8 +14,9 @@ export const AuthProvider = ({ children }) => {
   const [userName, setUserName] = useState("");
 
   useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    const storedUserName = localStorage.getItem('userName');
+    const token = localStorage.getItem(AUTH_STORAGE_KEYS.TOKEN);
+    const storedUserName = localStorage.getItem(AUTH_STORAGE_KEYS.USER_NAME);
+
     if (token && storedUserName) {
       setIsAuthenticated(true);
       setUserName(storedUserName);
@@ -18,22 +24,24 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = (token, name) => {
-    localStorage.setItem('authToken', token);
-    localStorage.setItem('userName', name);
+    localStorage.setItem(AUTH_STORAGE_KEYS.TOKEN, token);
+    localStorage.setItem(AUTH_STORAGE_KEYS.USER_NAME, name);
     setIsAuthenticated(true);
     setUserName(name);
   };
 
   const logout = () => {
-    localStorage.removeItem('authToken');
-    localStorage.removeItem('userName'); 
+    localStorage.removeItem(AUTH_STORAGE_KEYS.TOKEN);
+    localStorage.removeItem(AUTH_STORAGE_KEYS.USER_NAME);
     setIsAuthenticated(false);
     setUserName("");
   };
 
-  return (
-    <AuthContext.Provider value={{ isAuthenticated, userName, login, logout }}>
-      {children}
-    </AuthContext.Provider>
+  const contextValue = useMemo(
+    () => ({ isAuthenticated, userName, login, logout }),
+    [isAuthenticated, userName]
   );
+
+  return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;
 };
+
