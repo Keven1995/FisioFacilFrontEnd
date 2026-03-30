@@ -1,21 +1,32 @@
-import { defineConfig } from "vite";
+﻿import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 
-export default defineConfig({
-  plugins: [react()],
-  build: {
-    outDir: "dist",
-  },
-  server: {
-    open: true,
-    port: 3000,
-    proxy: {
-      "/api": {
-        target: process.env.VITE_API_URL || "https://fisiofacil-backend-byeacga0d9a3d7fc.canadacentral-01.azurewebsites.net",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), "");
+  const apiTarget = env.VITE_API_URL;
+
+  if (!apiTarget) {
+    throw new Error(
+      `VITE_API_URL nao definida para o modo "${mode}". Configure em .env.${mode}.`,
+    );
+  }
+
+  return {
+    plugins: [react()],
+    build: {
+      outDir: "dist",
+    },
+    server: {
+      open: true,
+      port: 3000,
+      proxy: {
+        "/api": {
+          target: apiTarget,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, ""),
+        },
       },
     },
-  },
-  base: "/", // Base deve ser '/' para produção
+    base: "/", // Base deve ser "/" para producao
+  };
 });
