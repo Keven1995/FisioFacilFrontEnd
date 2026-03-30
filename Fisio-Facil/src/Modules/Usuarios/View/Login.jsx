@@ -3,6 +3,7 @@ import { FaUser, FaLock } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../Context/AuthProvider.jsx";
 import { ROUTES } from "../../../constants/routes.js";
+import { API_BASE_URL } from "../../../config/api.js";
 import "../View/Styles/Login.css";
 import "../../../App.css";
 
@@ -16,10 +17,6 @@ const Login = () => {
   const { login } = useAuth();
   const from = location.state?.from || ROUTES.COLUNA_VERTEBRAL;
 
-  const apiUrl =
-    import.meta.env.VITE_API_URL ||
-    "https://fisiofacil-backend-byeacga0d9a3d7fc.canadacentral-01.azurewebsites.net";
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -31,7 +28,7 @@ const Login = () => {
     setIsLoading(true);
     setError("");
 
-    fetch(`${apiUrl}/api/usuarios/login`, {
+    fetch(`${API_BASE_URL}/usuarios/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

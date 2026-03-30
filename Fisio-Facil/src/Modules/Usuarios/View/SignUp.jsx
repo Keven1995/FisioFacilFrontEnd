@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUser, FaLock } from "react-icons/fa";
 import { ROUTES } from "../../../constants/routes.js";
+import { API_BASE_URL } from "../../../config/api.js";
 import "../View/Styles/SignUp.css";
 
 const SignUp = () => {
@@ -12,10 +13,6 @@ const SignUp = () => {
   const [message, setMessage] = useState(null);
   const [messageType, setMessageType] = useState("");
   const navigate = useNavigate();
-
-  const apiUrl =
-    import.meta.env.VITE_API_URL ||
-    "https://fisiofacil-backend-byeacga0d9a3d7fc.canadacentral-01.azurewebsites.net";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,7 +36,7 @@ const SignUp = () => {
       return;
     }
 
-    fetch(`${apiUrl}/api/usuarios/signup`, {
+    fetch(`${API_BASE_URL}/usuarios/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

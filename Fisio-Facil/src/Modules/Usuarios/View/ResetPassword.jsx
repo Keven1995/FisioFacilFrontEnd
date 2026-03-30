@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { API_BASE_URL } from "../../../config/api.js";
 import "../View/Styles/ForgetPassword.css";
 
 const ResetPassword = () => {
@@ -10,9 +11,6 @@ const ResetPassword = () => {
   const [confirmarSenha, setConfirmarSenha] = useState("");
   const [message, setMessage] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const apiUrl =
-    import.meta.env.VITE_API_URL || "https://fisiofacil-backend-byeacga0d9a3d7fc.canadacentral-01.azurewebsites.net";
 
   const validatePassword = (password) => {
     return (
@@ -41,7 +39,7 @@ const ResetPassword = () => {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch(`${apiUrl}/api/usuarios/redefinir-senha`, {
+      const response = await fetch(`${API_BASE_URL}/usuarios/redefinir-senha`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token, novaSenha }),
