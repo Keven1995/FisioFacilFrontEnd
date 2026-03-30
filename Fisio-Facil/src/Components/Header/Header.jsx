@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { useAuth } from "../../Context/AuthProvider.jsx";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,18 +11,42 @@ const Header = () => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const { isAuthenticated, userName, logout } = useAuth();
   const navigate = useNavigate();
+  const userMenuRef = useRef(null);
+
+  useEffect(() => {
+    const handlePointerDown = (event) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
+        setIsUserMenuOpen(false);
+      }
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setIsUserMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
 
   const toggleNavMenu = () => {
-    setIsNavOpen(!isNavOpen);
+    setIsNavOpen((previousState) => !previousState);
   };
 
   const toggleUserMenu = () => {
-    setIsUserMenuOpen(!isUserMenuOpen);
+    setIsUserMenuOpen((previousState) => !previousState);
   };
 
   const handleLogout = () => {
     const previousPage = window.location.pathname;
     logout();
+    setIsUserMenuOpen(false);
     navigate(previousPage);
   };
 
@@ -31,37 +55,28 @@ const Header = () => {
       <div className="header-container d-flex justify-content-between align-items-center p-3">
         <div className="logo">
           <Link to={ROUTES.HOME}>
-            <h1>FisioFácil</h1>
+            <h1>FisioFacil</h1>
           </Link>
         </div>
 
         {isAuthenticated && userName && (
-          <div className="user-dropdown">
-            <OverlayTrigger
-              placement="bottom"
-              overlay={<Tooltip>{userName}</Tooltip>}
-            >
+          <div className="user-dropdown" ref={userMenuRef}>
+            <OverlayTrigger placement="bottom" overlay={<Tooltip>{userName}</Tooltip>}>
               <button
-                className="btn btn-primary rounded-circle"
+                type="button"
+                className="user-avatar-btn"
                 onClick={toggleUserMenu}
-                style={{
-                  width: "40px",
-                  height: "40px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "18px",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                }}
+                aria-haspopup="menu"
+                aria-expanded={isUserMenuOpen}
+                aria-label="Abrir menu do usuario"
               >
                 {userName.charAt(0).toUpperCase()}
               </button>
             </OverlayTrigger>
 
             {isUserMenuOpen && (
-              <div className="dropdown-menu show mt-2">
-                <button className="dropdown-item" onClick={handleLogout}>
+              <div className="user-menu" role="menu">
+                <button type="button" className="user-menu-item" onClick={handleLogout} role="menuitem">
                   Sair
                 </button>
               </div>
@@ -69,6 +84,7 @@ const Header = () => {
           </div>
         )}
       </div>
+
       <nav className="header-nav">
         <div className="navbar navbar-expand-lg navbar-light">
           <button
@@ -80,10 +96,7 @@ const Header = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div
-            className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`}
-            id="navbarNav"
-          >
+          <div className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`} id="navbarNav">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <NavLink to={ROUTES.HOME} className="nav-link">
@@ -92,7 +105,7 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <NavLink to="/servicos" className="nav-link">
-                  Serviços
+                  Servicos
                 </NavLink>
               </li>
               <li className="nav-item">
