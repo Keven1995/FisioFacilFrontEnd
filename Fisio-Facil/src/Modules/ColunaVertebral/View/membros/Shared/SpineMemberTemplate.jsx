@@ -1,6 +1,7 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useImagePreload } from "../../../../../hooks/useImagePreload.js";
 import "../Styles/Membro.css";
 
 const SpineMemberTemplate = ({
@@ -12,6 +13,13 @@ const SpineMemberTemplate = ({
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
+  const responsiveSrcSet = `${imageMobile} 520w, ${imageDesktop} 900w`;
+
+  useImagePreload({
+    href: imageDesktop,
+    srcSet: responsiveSrcSet,
+    sizes: "(max-width: 768px) 92vw, 420px",
+  });
 
   const handleImageLoad = () => {
     setIsLoaded(true);
@@ -36,12 +44,11 @@ const SpineMemberTemplate = ({
             {!isLoaded && <div className="skeleton cervical-image" aria-hidden="true" />}
             <img
               src={imageDesktop}
-              srcSet={`${imageMobile} 520w, ${imageDesktop} 900w`}
+              srcSet={responsiveSrcSet}
               sizes="(max-width: 768px) 92vw, 420px"
               alt={`Representacao da regiao ${memberName}`}
               className={`cervical-image ${isLoaded ? "loaded" : "d-none"}`}
               loading="eager"
-              fetchPriority="high"
               onLoad={handleImageLoad}
             />
           </article>
@@ -81,3 +88,4 @@ const SpineMemberTemplate = ({
 };
 
 export default SpineMemberTemplate;
+

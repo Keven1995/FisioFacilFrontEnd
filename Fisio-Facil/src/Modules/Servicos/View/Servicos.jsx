@@ -6,8 +6,8 @@ import colunaVertebralDesktopImg from "../../../assets/img/optimized/colunaVerte
 import colunaVertebralMobileImg from "../../../assets/img/optimized/colunaVertebral-mobile.jpg";
 import inferioresDesktopImg from "../../../assets/img/optimized/inferiores-desktop.jpg";
 import inferioresMobileImg from "../../../assets/img/optimized/inferiores-mobile.jpg";
-import superioresDesktopImg from "../../../assets/img/optimized/superiores-desktop.jpg";
-import superioresMobileImg from "../../../assets/img/optimized/superiores-mobile.jpg";
+const superioresDesktopImg = "/images/superiores-desktop.jpg";
+const superioresMobileImg = "/images/superiores-mobile.jpg";
 
 const serviceItems = [
   {
@@ -78,7 +78,6 @@ const Servicos = () => {
                   alt={service.alt}
                   className={`service-card-img ${loadedImages[service.id] ? "" : "d-none"}`}
                   loading={service.id === "superiores" ? "eager" : "lazy"}
-                  fetchPriority={service.id === "superiores" ? "high" : "auto"}
                   onLoad={() => handleImageLoad(service.id)}
                 />
 
@@ -93,3 +92,6 @@ const Servicos = () => {
 };
 
 export default Servicos;
+
+
+

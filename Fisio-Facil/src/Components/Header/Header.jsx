@@ -23,6 +23,7 @@ const Header = () => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
         setIsUserMenuOpen(false);
+        setIsNavOpen(false);
       }
     };
 
@@ -43,6 +44,10 @@ const Header = () => {
     setIsUserMenuOpen((previousState) => !previousState);
   };
 
+  const closeNavMenu = () => {
+    setIsNavOpen(false);
+  };
+
   const handleLogout = () => {
     const previousPage = window.location.pathname;
     logout();
@@ -52,75 +57,74 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="header-container d-flex justify-content-between align-items-center p-3">
+      <div className="header-top">
         <div className="logo">
-          <Link to={ROUTES.HOME}>
+          <Link to={ROUTES.HOME} onClick={closeNavMenu}>
             <h1>FisioFacil</h1>
           </Link>
         </div>
 
-        {isAuthenticated && userName && (
-          <div className="user-dropdown" ref={userMenuRef}>
-            <OverlayTrigger placement="bottom" overlay={<Tooltip>{userName}</Tooltip>}>
-              <button
-                type="button"
-                className="user-avatar-btn"
-                onClick={toggleUserMenu}
-                aria-haspopup="menu"
-                aria-expanded={isUserMenuOpen}
-                aria-label="Abrir menu do usuario"
-              >
-                {userName.charAt(0).toUpperCase()}
-              </button>
-            </OverlayTrigger>
-
-            {isUserMenuOpen && (
-              <div className="user-menu" role="menu">
-                <button type="button" className="user-menu-item" onClick={handleLogout} role="menuitem">
-                  Sair
+        <div className="header-actions">
+          {isAuthenticated && userName && (
+            <div className="user-dropdown" ref={userMenuRef}>
+              <OverlayTrigger placement="bottom" overlay={<Tooltip>{userName}</Tooltip>}>
+                <button
+                  type="button"
+                  className="user-avatar-btn"
+                  onClick={toggleUserMenu}
+                  aria-haspopup="menu"
+                  aria-expanded={isUserMenuOpen}
+                  aria-label="Abrir menu do usuario"
+                >
+                  {userName.charAt(0).toUpperCase()}
                 </button>
-              </div>
-            )}
-          </div>
-        )}
+              </OverlayTrigger>
+
+              {isUserMenuOpen && (
+                <div className="user-menu" role="menu">
+                  <button type="button" className="user-menu-item" onClick={handleLogout} role="menuitem">
+                    Sair
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+
+          <button
+            type="button"
+            className="nav-toggle"
+            onClick={toggleNavMenu}
+            aria-label="Alternar menu principal"
+            aria-expanded={isNavOpen}
+          >
+            <span className="nav-toggle-icon" />
+          </button>
+        </div>
       </div>
 
-      <nav className="header-nav">
-        <div className="navbar navbar-expand-lg navbar-light">
-          <button
-            className="navbar-toggler"
-            type="button"
-            aria-label="Toggle navigation"
-            onClick={toggleNavMenu}
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-
-          <div className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`} id="navbarNav">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <NavLink to={ROUTES.HOME} className="nav-link">
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/servicos" className="nav-link">
-                  Servicos
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/sobre" className="nav-link">
-                  Sobre
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/contato" className="nav-link">
-                  Contato
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <nav className={`header-nav ${isNavOpen ? "is-open" : ""}`}>
+        <ul className="header-nav-list">
+          <li className="nav-item">
+            <NavLink to={ROUTES.HOME} className="nav-link" onClick={closeNavMenu}>
+              Home
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/servicos" className="nav-link" onClick={closeNavMenu}>
+              Servicos
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/sobre" className="nav-link" onClick={closeNavMenu}>
+              Sobre
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/contato" className="nav-link" onClick={closeNavMenu}>
+              Contato
+            </NavLink>
+          </li>
+        </ul>
       </nav>
     </header>
   );
