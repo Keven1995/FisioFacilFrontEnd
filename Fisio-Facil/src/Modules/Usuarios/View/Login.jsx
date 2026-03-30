@@ -1,21 +1,24 @@
 import { useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../Context/AuthProvider.jsx";
+import { ROUTES } from "../../../constants/routes.js";
 import "../View/Styles/Login.css";
 import "../../../App.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false); // Estado de carregamento
-  const [error, setError] = useState(""); // Estado de erro
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const { login } = useAuth();
-  const from = location.state?.from || "/ColunaVertebral";
+  const from = location.state?.from || ROUTES.COLUNA_VERTEBRAL;
 
-  const apiUrl = import.meta.env.VITE_API_URL || "https://fisiofacil-backend-byeacga0d9a3d7fc.canadacentral-01.azurewebsites.net";
+  const apiUrl =
+    import.meta.env.VITE_API_URL ||
+    "https://fisiofacil-backend-byeacga0d9a3d7fc.canadacentral-01.azurewebsites.net";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,13 +45,11 @@ const Login = () => {
         return response.json();
       })
       .then((data) => {
-        localStorage.setItem("authToken", data.token);
-        localStorage.setItem("userName", data.userName);
         login(data.token, data.userName);
         navigate(from, { replace: true });
       })
-      .catch((error) => {
-        setError(error.message || "Erro ao realizar login.");
+      .catch((requestError) => {
+        setError(requestError.message || "Erro ao realizar login.");
       })
       .finally(() => setIsLoading(false));
   };
@@ -79,14 +80,14 @@ const Login = () => {
             <input type="checkbox" />
             Lembrar de mim
           </label>
-          <a href="/esqueciaSenha">Esqueceu a senha?</a>
+          <Link to={ROUTES.ESQUECI_SENHA}>Esqueceu a senha?</Link>
         </div>
         <button type="submit" className="btn" disabled={isLoading}>
           {isLoading ? "Carregando..." : "Login"}
         </button>
         <div className="signup-link">
           <p className="p">
-            Não tem uma conta? <a href="/cadastrar">Registrar</a>
+            Não tem uma conta? <Link to={ROUTES.CADASTRAR}>Registrar</Link>
           </p>
         </div>
       </form>

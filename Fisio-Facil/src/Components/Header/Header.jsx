@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useAuth } from "../../Context/AuthProvider.jsx";
-import { useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/Header.css";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import { ROUTES } from "../../constants/routes.js";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -11,7 +12,6 @@ const Header = () => {
   const { isAuthenticated, userName, logout } = useAuth();
   const navigate = useNavigate();
 
-  
   const toggleNavMenu = () => {
     setIsNavOpen(!isNavOpen);
   };
@@ -23,8 +23,6 @@ const Header = () => {
   const handleLogout = () => {
     const previousPage = window.location.pathname;
     logout();
-    localStorage.removeItem("authToken");
-    localStorage.removeItem("userName");
     navigate(previousPage);
   };
 
@@ -32,9 +30,9 @@ const Header = () => {
     <header className="header">
       <div className="header-container d-flex justify-content-between align-items-center p-3">
         <div className="logo">
-          <a href="/">
+          <Link to={ROUTES.HOME}>
             <h1>FisioFácil</h1>
-          </a>
+          </Link>
         </div>
 
         {isAuthenticated && userName && (
@@ -82,27 +80,30 @@ const Header = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`} id="navbarNav">
+          <div
+            className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`}
+            id="navbarNav"
+          >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a href="/" className="nav-link">
+                <NavLink to={ROUTES.HOME} className="nav-link">
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a href="/servicos" className="nav-link">
+                <NavLink to="/servicos" className="nav-link">
                   Serviços
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a href="/sobre" className="nav-link">
+                <NavLink to="/sobre" className="nav-link">
                   Sobre
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a href="/contato" className="nav-link">
+                <NavLink to="/contato" className="nav-link">
                   Contato
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>

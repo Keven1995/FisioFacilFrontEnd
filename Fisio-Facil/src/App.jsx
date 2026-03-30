@@ -52,11 +52,12 @@ import CervicalExercicios from "./Modules/ColunaVertebral/View/membros/Cervical/
 import FlexaoCervical from "./Modules/ColunaVertebral/View/membros/Cervical/FlexaoCervical";
 import CervicalListaExercicio from "./Modules/Exercicios/ColunaVertebral/CervicalListaExercicio";
 import ResetPassword from "./Modules/Usuarios/View/ResetPassword";
+import { ROUTES } from "./constants/routes.js";
 
 function App() {
   const location = useLocation();
 
-  const isLoginPage = ["/login", "/cadastrar", "/esqueciaSenha"].includes(
+  const isLoginPage = [ROUTES.LOGIN, ROUTES.CADASTRAR, ROUTES.ESQUECI_SENHA].includes(
     location.pathname
   );
 
@@ -65,17 +66,17 @@ function App() {
       {!isLoginPage && <Header />}
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cadastrar" element={<SignUp />} />
-        <Route path="/esqueciaSenha" element={<ForgetPassword />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.LOGIN} element={<Login />} />
+        <Route path={ROUTES.CADASTRAR} element={<SignUp />} />
+        <Route path={ROUTES.ESQUECI_SENHA} element={<ForgetPassword />} />
+        <Route path={ROUTES.RESET_PASSWORD} element={<ResetPassword />} />
 
 
         <Route path="/servicos" element={<Servicos />} />
         <Route path="/membrosInferiores" element={<MembrosInferiores />} />
         <Route path="/membrosSuperiores" element={<MembrosSuperiores />} />
-        <Route path="/colunaVertebral" element={<ColunaVertebral />} />
+        <Route path={ROUTES.COLUNA_VERTEBRAL} element={<ColunaVertebral />} />
         <Route path="/contato" element={<Contact />} />
         <Route path="/sobre" element={<About />} />
 
